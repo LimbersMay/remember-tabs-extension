@@ -11,4 +11,8 @@ export const Button = styled.button`
     width: 75px;
     padding: 4px;
     min-height: 35px;
+
+    :hover {
+        background-color: ${ props => props.hoverColor || '#4A148C'  };
+    }
 `;
