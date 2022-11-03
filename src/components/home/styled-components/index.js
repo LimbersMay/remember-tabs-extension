@@ -13,4 +13,4 @@ export * from './tabItem/TabItemTitle.style';
 export * from './tabItem/TabItemUrl.style';
 
 export * from './MainButtons.style';
-export * from './Button.style';
+export * from './MainButton.style';
