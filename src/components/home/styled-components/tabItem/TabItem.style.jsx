@@ -10,5 +10,9 @@ export const TabItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    :hover {
+        background-color: #c7c9d6;
+    }
 `;
 
