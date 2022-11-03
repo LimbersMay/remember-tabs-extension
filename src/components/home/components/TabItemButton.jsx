@@ -1,9 +1,12 @@
 import * as S from '../styled-components';
 
-export const TabItemButton = () => {
+export const TabItemButton = ({ text, styles }) => {
     return (
-        <S.TabItemButton>
-            
+        <S.TabItemButton 
+            background={ styles.background } 
+            hover={ styles.hover }
+        >
+            { text }
         </S.TabItemButton>
     )
 }
