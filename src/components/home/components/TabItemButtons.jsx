@@ -3,12 +3,28 @@ import { TabItemButton } from "./TabItemButton";
 
 
 export const TabItemButtons = () => {
-  return (
-    <S.TabItemButtons>
+    return (
+        <S.TabItemButtons>
 
-      <TabItemButton />
+            <TabItemButton
+                text={'Go'}
 
-    </S.TabItemButtons>
-  )
+                styles={{
+                    background: '#00695C',
+                    hover: '#005a4f'
+                }}
+            />
+
+            <TabItemButton
+                text={'Delete'}
+                
+                styles={{
+                    background: '#C62828',
+                    hover: '#b71c1c'
+                }}
+            />
+
+        </S.TabItemButtons>
+    )
 }
 
