@@ -1,23 +1,16 @@
-import { MainContainer } from "../../styled-components/MainContainer"
-import { ActionButtons } from "./components/ActionButtons"
-import { TabItems } from "./components/TabItems"
-import { Title } from "./styled-components/Title"
-import { TitleContainer } from "./styled-components/TitleContainer"
+import * as S from "../../styled-components/MainContainer.style";
+import { Header, TabItems, MainButtons } from './components';
 
 export const HomeApp = () => {
     return (
-        <MainContainer>
+        <S.HomeApp>
 
-            <TitleContainer>
-                <Title>
-                    RememberTabs
-                </Title>
-            </TitleContainer>
+            <Header />
 
             <TabItems />
 
-            <ActionButtons />
+            <MainButtons />
 
-        </MainContainer>
+        </S.HomeApp>
     )
 }
