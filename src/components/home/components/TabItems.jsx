@@ -1,18 +1,14 @@
-import { TabItemsContainer } from "../styled-components/TabItemsContainer"
-import { TabItem } from "./TabItem"
+import * as S from "../styled-components";
+import { TabItem } from "./TabItem";
 
 
 export const TabItems = () => {
     return (
-        <TabItemsContainer>
+        <S.TabItems>
 
             <TabItem />
-            <TabItem />
-            <TabItem />
-            <TabItem />
-            <TabItem />
-            <TabItem />
-
-        </TabItemsContainer>
+            <TabItem /> 
+            
+        </S.TabItems>
     )
 }

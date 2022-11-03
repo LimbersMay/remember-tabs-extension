@@ -1,9 +1,14 @@
-import { TabItemContainer } from "../styled-components/TabItemContainer"
+import * as S from "../styled-components"
+import { TabItemButtons } from "./TabItemButtons"
+import { TabItemInfo } from "./TabItemInfo"
 
 export const TabItem = () => {
 	return (
-		<TabItemContainer>
+		<S.TabItem>
 			
-		</TabItemContainer>
+			<TabItemInfo />
+			<TabItemButtons />
+
+		</S.TabItem>
 	)
 }
