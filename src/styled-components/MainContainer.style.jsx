@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const MainContainer = styled.div`
+export const HomeApp = styled.div`
     background-color: #E8EAF6;
-    width: 300px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
 
     display: flex;
     flex-direction: column;
