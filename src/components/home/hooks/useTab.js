@@ -29,9 +29,13 @@ export const useTab = () => {
         setTabsState(currentUserTabs);
     }
 
-    const handleOpenTabs = () => {
+    const handleOpenTabs = async() => {
         const tabsUrls = tabsState.map(tab => tab.url);
-        tabAccess.openTabs(tabsUrls);
+        const currentOpenTabs = await tabAccess.getTabsUrls();
+        const currentUrlTabs = currentOpenTabs.map( tab => tab.url );
+
+        const tabsToOpen = tabsUrls.filter( url => !currentUrlTabs.includes(url));
+        tabAccess.openTabs(tabsToOpen);
     }
 
     const handleDeleteTabs = () => {
