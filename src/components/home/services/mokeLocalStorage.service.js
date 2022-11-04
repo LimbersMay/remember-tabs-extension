@@ -1,19 +1,7 @@
 export class MokeLocalStorageService {
     
     setTabs( tabs ) {
-        return [
-            {
-                title: 'Facebook',
-                url: 'facebook.com',
-                id: 483435
-            },
-            {
-                title: "Google",
-                url: "Google.com",
-                id: 543943
-            }
-        ];
-
+        return;
     }
 
     getTabsUrls() {
@@ -21,8 +9,8 @@ export class MokeLocalStorageService {
 
             const tabsUrls = [
                 {
-                    title: 'Facebook',
-                    url: 'facebook.com',
+                    title: 'Write the asynchronous function inside the useEffect',
+                    url: 'https://www.youtube.com/watch?v=4N1bifzQEhI&list=RDwGF7PswOENQ&index=13',
                     id: 483435
                 },
                 {
