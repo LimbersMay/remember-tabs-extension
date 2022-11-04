@@ -7,17 +7,13 @@ import { TabContext } from "./context/TabContext";
 
 export const TabItems = () => {
 
-    const { tabs, isLoading } = useContext(TabContext);
+    const { tabsState } = useContext(TabContext);
 
     return (
         <S.TabItems>
 
             {
-                isLoading
-                    
-                &&
-
-                tabs.map( tab => (
+                tabsState.map( tab => (
                     <TabItem 
                         key={v4()}
                         tab={tab}
