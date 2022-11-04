@@ -41,10 +41,27 @@ export const useTab = () => {
         setTabsState([]);
     }
 
+    const handleDeleteTab = ( id ) => {
+        const newState = tabsState.filter( tab => tab.id !== id);
+        storageAccess.setTabs(newState);
+
+        setTabsState(newState);
+    }   
+
+    const handleOpenTab = ( id ) => {
+        const tabToOpen = tabsState
+            .filter( tab => tab.id === id)
+            .map( tab => tab.url);
+
+        tabAccess.openTabs(tabToOpen);
+    }
+
     return {
         tabsState,
         handleSetTabs,
         handleOpenTabs,
-        handleDeleteTabs
+        handleDeleteTabs,
+        handleDeleteTab,
+        handleOpenTab
     };
 }
