@@ -15,7 +15,7 @@ export const TabItemButtons = ({ tab }) => {
 
                 onClick={ () => handleOpenTab(tab.id) }
             >
-                Go
+                Open
             </S.TabItemButton>
 
             <S.TabItemButton
