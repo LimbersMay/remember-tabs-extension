@@ -2,15 +2,16 @@ import * as S from "../../styled-components/MainContainer.style";
 import { Header, TabItems, MainButtons } from './components';
 
 export const HomeApp = () => {
+
     return (
-        <S.HomeApp>
+            <S.HomeApp>
 
-            <Header />
+                <Header />
 
-            <TabItems />
+                <TabItems />
 
-            <MainButtons />
+                <MainButtons />
 
-        </S.HomeApp>
+            </S.HomeApp>
     )
 }

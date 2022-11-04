@@ -1,28 +1,31 @@
+import { useContext } from "react";
 import * as S from "../styled-components";
-import { TabItemButton } from "./TabItemButton";
+import { TabContext } from "./context/TabContext";
 
+export const TabItemButtons = ({ tab }) => {
 
-export const TabItemButtons = () => {
+    const { handleOpenTab, handleDeleteTab } = useContext(TabContext);
+
     return (
         <S.TabItemButtons>
+            
+            <S.TabItemButton
+                background={'#00695C'}
+                hover={'#005a4f'}
 
-            <TabItemButton
-                text={'Go'}
+                onClick={ () => handleOpenTab(tab.id) }
+            >
+                Go
+            </S.TabItemButton>
 
-                styles={{
-                    background: '#00695C',
-                    hover: '#005a4f'
-                }}
-            />
+            <S.TabItemButton
+                background={'#C62828'}
+                hover={'#b71c1c'}
 
-            <TabItemButton
-                text={'Delete'}
-                
-                styles={{
-                    background: '#C62828',
-                    hover: '#b71c1c'
-                }}
-            />
+                onClick={ () => handleDeleteTab(tab.id) }
+            >
+                Delete
+            </S.TabItemButton>
 
         </S.TabItemButtons>
     )

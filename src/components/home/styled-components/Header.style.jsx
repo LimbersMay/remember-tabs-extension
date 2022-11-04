@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-    background-color: #B71C1C;
+    background-color: #006064;
     width: 100%;
     display: flex;
     height: 50px;

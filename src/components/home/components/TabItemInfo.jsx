@@ -1,15 +1,15 @@
 import * as S from "../styled-components"
 
-export const TabItemInfo = () => {
+export const TabItemInfo = ({ tab }) => {
     return (
         <S.TabItemInfo>
 
             <S.TabItemTitle>
-                Titulo de la ventana
+                { tab.title }
             </S.TabItemTitle>
 
             <S.TabItemUrl>
-                google.com
+                { tab.url }
             </S.TabItemUrl>
 
         </S.TabItemInfo>
