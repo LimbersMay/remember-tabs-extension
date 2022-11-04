@@ -7,8 +7,8 @@ import {
     ChromeLocalStorageService, 
 } from "../services";
 
-const storageAccess = new StorageController(new ChromeTabService());
-const tabAccess = new TabController(new ChromeLocalStorageService());
+const storageAccess = new StorageController(new ChromeLocalStorageService());
+const tabAccess = new TabController(new ChromeTabService());
 
 export const useTab = () => {
 
