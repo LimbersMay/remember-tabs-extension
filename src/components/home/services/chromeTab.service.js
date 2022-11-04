@@ -13,7 +13,13 @@ export class ChromeTabService {
     getTabsUrls() {
         return new Promise((resolve, reject) => {
             chrome.tabs.query({}, (tabs) => {
-                const urls = tabs.map(tab => tab.url);
+                
+                const urls = tabs.map(tab => ({
+                    title: tab.title,
+                    url: tab.url,
+                    id: tab.id
+                }))
+
                 resolve(urls);
             });
         })
