@@ -3,10 +3,11 @@ import { TabItemButtons } from "./TabItemButtons"
 import { TabItemInfo } from "./TabItemInfo"
 
 export const TabItem = ({ tab }) => {
+
 	return (
 		<S.TabItem>
 			<TabItemInfo tab={ tab } />
-			<TabItemButtons />
+			<TabItemButtons tab={ tab }/>
 		</S.TabItem>
 	)
 }
