@@ -5,12 +5,10 @@ import { TabController } from "../controllers/tab.controller";
 import { 
     ChromeTabService,
     ChromeLocalStorageService, 
-    MokeLocalStorageService, 
-    MokeLocalTabService 
 } from "../services";
 
-const storageAccess = new StorageController(new MokeLocalStorageService());
-const tabAccess = new TabController(new MokeLocalTabService());
+const storageAccess = new StorageController(new ChromeTabService());
+const tabAccess = new TabController(new ChromeLocalStorageService());
 
 export const useTab = () => {
 
