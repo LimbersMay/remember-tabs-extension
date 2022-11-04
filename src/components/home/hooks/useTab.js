@@ -1,35 +1,50 @@
-import { useEffect, useReducer, useState } from "react";
-import { tabReducer } from "../components/tabReducer";
+import { useEffect, useState } from "react";
 
 import { StorageController } from '../controllers/storage.controller';
-import { MokeLocalStorageService } from "../services";
+import { TabController } from "../controllers/tab.controller";
+import { 
+    ChromeTabService,
+    ChromeLocalStorageService, 
+    MokeLocalStorageService, 
+    MokeLocalTabService 
+} from "../services";
 
 const storageAccess = new StorageController(new MokeLocalStorageService());
+const tabAccess = new TabController(new MokeLocalTabService());
 
 export const useTab = () => {
 
-    const [isLoading, setIsLoading] = useState(true);  
-    const [ tabs, dispatch ] = useReducer(tabReducer, []);
+    const [tabsState, setTabsState] = useState([{}]);
 
     useEffect(() => {
 
-        const fetchTabs = async() => {
-            return await storageAccess.getTabsUrls()
-        };
+        storageAccess.getTabsUrls().then( urls => {
+            setTabsState(urls);
+        });
 
-        const tabs = fetchTabs();
+    }, []);
 
-        dispatch(tabs);
-        setIsLoading(false);
-    }, [])
+    const handleSetTabs = async() => {
+        const currentUserTabs = await tabAccess.getTabsUrls();
+        storageAccess.setTabs(currentUserTabs);
 
-    const handleSetTabs = (tabs) => {
-        console.log('Se llamó desde: ', tabs);
-    }  
+        setTabsState(currentUserTabs);
+    }
+
+    const handleOpenTabs = () => {
+        const tabsUrls = tabsState.map(tab => tab.url);
+        tabAccess.openTabs(tabsUrls);
+    }
+
+    const handleDeleteTabs = () => {
+        storageAccess.setTabs([]);
+        setTabsState([]);
+    }
 
     return {
-        tabs,
+        tabsState,
         handleSetTabs,
-        isLoading
+        handleOpenTabs,
+        handleDeleteTabs
     };
 }
