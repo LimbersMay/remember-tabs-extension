@@ -12,23 +12,21 @@ export const TabItems = () => {
 
     return (
 
-        <TransitionGroup component={S.TabItems} appear={true}>
+        <TransitionGroup component={S.TabItems}>
             {
-                tabsState.map((tab, index) => (
+                tabsState.map(tab => (
+
                     <CSSTransition
                         key={tab.id}
                         timeout={300}
                         classNames="transition"
                     >
 
-                        <TabItem 
-                            key={ v4() }
-                            tab={ tab }
-                        ></TabItem>
+                    <TabItem tab={tab} />
 
                     </CSSTransition>
                 ))
             }
-        </TransitionGroup>
+        </TransitionGroup >
     )
 }
