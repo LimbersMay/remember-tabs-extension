@@ -5,7 +5,6 @@ export const TabProvider = ({ children }) => {
 
     const {
         tabsState,
-        isLoading,
         handleSetTabs,
         handleOpenTabs,
         handleDeleteTabs,
@@ -16,7 +15,6 @@ export const TabProvider = ({ children }) => {
     return (
         <TabContext.Provider value={{
             tabsState,
-            isLoading,
             handleSetTabs,
             handleOpenTabs,
             handleDeleteTabs,
