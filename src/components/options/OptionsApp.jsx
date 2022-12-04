@@ -1,9 +1,9 @@
-import {OptionsContainer} from "./components/OptionsContainer.jsx";
+import {PreferencesContainer} from "./components/PreferencesContainer.jsx";
 
 export const OptionsApp = () => {
     return (
         <>
-          <OptionsContainer/>
+          <PreferencesContainer/>
         </>
     )
 }

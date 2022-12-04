@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const OptionsContainer = styled.div`
+export const PreferencesContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
