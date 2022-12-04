@@ -11,4 +11,8 @@ export class StorageController {
     getTabsUrls() {
         return this.service.getTabsUrls();
     }
+
+    getItemBy(query) {
+        return this.service.getItemBy(query);
+    }
 }
