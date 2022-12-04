@@ -6,8 +6,8 @@ export const OptionsContainer = () => {
 
     return (
         <S.OptionsContainer>
-            <Select text={"Language"} placeholder={"Select language"} />
-            <Select text={"Layout"} placeholder={"Select language"} />
+            <Select placeholder={"Select language"} />
+            <Select placeholder={"Select the layout"} />
         </S.OptionsContainer>
     )
 }
