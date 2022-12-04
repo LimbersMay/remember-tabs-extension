@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HomeApp = styled.div`
+export const MainLayout = styled.div`
     background-color: #E8EAF6;
     width: 350px;
     height: 350px;
