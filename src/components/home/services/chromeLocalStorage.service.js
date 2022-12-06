@@ -14,6 +14,19 @@ export class ChromeLocalStorageService {
 
                 resolve(JSON.parse(result.tabs));
             });
+        });
+    }
+
+    getItemBy(query) {
+        return new Promise(( resolve, reject ) => {
+            chrome.storage.sync.get([query], function( result ) {
+
+                if ( !result ) {
+                    return resolve('extended');
+                }
+
+                resolve(JSON.parse(result.tabs));
+            });
         })
     }
 }
