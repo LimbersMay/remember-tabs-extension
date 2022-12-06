@@ -2,7 +2,7 @@
 import * as S from '../styled-components';
 import { useNavigate } from 'react-router-dom';
 
-export const ButtonsContainer = () => {
+export const OptionButtons = () => {
 
     const history = useNavigate();
 
