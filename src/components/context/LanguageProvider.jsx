@@ -1,4 +1,6 @@
 import {LanguageContext} from "./LanguageContext";
+import {useContext} from "react";
+import {PreferencesContext} from "./PreferencesContext.jsx";
 
 const dictionaries = {
     'ES-MX': {
@@ -65,14 +67,15 @@ const dictionaries = {
 
 export const LanguageProvider = ({ children }) => {
 
-    const getDictionaryByLanguage = (language) => {
+    const { language } = useContext(PreferencesContext);
+    const getUSerDictionary = () => {
         return dictionaries[language] ?? dictionaries['EN-US'];
     }
 
     return (
         <LanguageContext.Provider value={
             {
-                getDictionaryByLanguage
+                getUSerDictionary
             }
         }>
             {children}
