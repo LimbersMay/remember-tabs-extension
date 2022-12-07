@@ -17,15 +17,24 @@ export class ChromeLocalStorageService {
         });
     }
 
+    createItem(itemName, value) {
+
+        const query = {};
+        query[itemName] = value;
+
+        chrome.storage.sync.set(query);
+    }
+
     getItemBy(query) {
+
         return new Promise(( resolve, reject ) => {
             chrome.storage.sync.get([query], function( result ) {
 
-                if ( !result ) {
-                    return resolve('extended');
+                if ( !result[query]) {
+                    return resolve(null);
                 }
 
-                resolve(JSON.parse(result.tabs));
+                resolve(result[query]);
             });
         })
     }

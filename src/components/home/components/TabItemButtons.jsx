@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import * as S from "../styled-components";
 import { TabContext } from "./context/TabContext";
+import {LanguageContext} from "../../context/LanguageContext.jsx";
 
 export const TabItemButtons = ({ tab }) => {
 
     const { handleOpenTab, handleDeleteTab } = useContext(TabContext);
+
+    // Obtenemos los textos del idioma del cliente
+    const { getUSerDictionary } = useContext(LanguageContext);
+    const { openButtonCard, deleteButton } = getUSerDictionary();
 
     return (
         <S.TabItemButtons>
@@ -15,7 +20,7 @@ export const TabItemButtons = ({ tab }) => {
 
                 onClick={ () => handleOpenTab(tab.id) }
             >
-                Open
+                { openButtonCard }
             </S.TabItemButton>
 
             <S.TabItemButton
@@ -24,7 +29,7 @@ export const TabItemButtons = ({ tab }) => {
 
                 onClick={ () => handleDeleteTab(tab.id) }
             >
-                Delete
+                { deleteButton }
             </S.TabItemButton>
 
         </S.TabItemButtons>

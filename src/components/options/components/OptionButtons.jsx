@@ -1,26 +1,28 @@
-
 import * as S from '../styled-components';
-import { useNavigate } from 'react-router-dom';
+import {useContext} from "react";
+import {LanguageContext} from "../../context/LanguageContext.jsx";
 
 export const OptionButtons = () => {
 
-    const history = useNavigate();
+    const { getUSerDictionary } = useContext(LanguageContext);
+    const { saveButton, cancelButton } = getUSerDictionary();
 
     return (
         <S.ButtonsContainer>
             <S.Button
                 background={'#2E7D32'}
                 hover={'#2a692d'}
+                type={"submit"}
             >
-                Save
+                {saveButton}
             </S.Button>
 
             <S.Button
                 background={'#455A64'}
                 hover={'#37474F'}
-                onClick={() => history('/')}
+                type={"reset"}
             >
-                Cancel
+                {cancelButton}
             </S.Button>
         </S.ButtonsContainer>
     )
