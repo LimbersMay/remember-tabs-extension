@@ -17,8 +17,12 @@ export class ChromeLocalStorageService {
         });
     }
 
-    createItem(name, value) {
-        chrome.storage.sync.set({name: JSON.stringify(value)});
+    createItem(itemName, value) {
+
+        const query = {};
+        query[itemName] = value;
+
+        chrome.storage.sync.set(query);
     }
 
     getItemBy(query) {
@@ -26,11 +30,11 @@ export class ChromeLocalStorageService {
         return new Promise(( resolve, reject ) => {
             chrome.storage.sync.get([query], function( result ) {
 
-                if ( typeof result !== 'string') {
+                if ( !result[query]) {
                     return resolve(null);
                 }
 
-                resolve(JSON.parse(result));
+                resolve(result[query]);
             });
         })
     }
