@@ -6,20 +6,22 @@ export const useUserPreferences = (localStorageService) => {
     const [ layout, setLayout ] = useState('EX');
 
     useEffect(() => {
-        localStorageService.getItemBy('language').then( language => {
+        localStorageService.getItemBy("language").then( language => {
             if (!language) {
                 return;
             }
+
             setLanguage(language);
         });
 
-        localStorageService.getItemBy('layout').then( layout => {
+        localStorageService.getItemBy("layout").then( layout => {
             if (!layout) {
                 return;
             }
 
             setLayout(layout);
         });
+
     }, []);
 
     useEffect(() => {
@@ -31,7 +33,7 @@ export const useUserPreferences = (localStorageService) => {
     }, [layout]);
 
     const handleGetLanguage = () => {
-        return localStorageService.getItemBy('language');
+        return localStorageService.getItemBy("language");
     }
 
     const handleSetLanguage = (language) => {
@@ -39,11 +41,19 @@ export const useUserPreferences = (localStorageService) => {
     }
 
     const handleGetLayout = () => {
-        return localStorageService.getItemBy('layout') ;
+        return localStorageService.getItemBy("layout") ;
     }
 
     const handleSetLayout = (layout) => {
-        setLanguage(layout);
+        setLayout(layout);
+    }
+
+    const handleResetPreferences = async() => {
+        const userLang = await localStorageService.getItemBy('language');
+        const userLayout = await localStorageService.getItemBy('layout');
+
+        setLanguage(userLang);
+        setLayout(userLayout);
     }
 
     return {
@@ -52,6 +62,7 @@ export const useUserPreferences = (localStorageService) => {
         handleGetLanguage,
         handleSetLanguage,
         handleGetLayout,
-        handleSetLayout
+        handleSetLayout,
+        handleResetPreferences
     }
 }
