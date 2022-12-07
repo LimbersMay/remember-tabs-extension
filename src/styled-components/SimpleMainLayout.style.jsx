@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SimpleMainLayout = styled.div`
   background-color: #E8EAF6;
   width: 150px;
-  height: 280px;
+  height: 350px;
 
   display: flex;
   flex-direction: column;
