@@ -6,20 +6,24 @@ import {useNavigate} from "react-router-dom";
 
 export const OptionsApp = () => {
 
-    const { handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
+    const { layout, handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
 
     const history = useNavigate();
     const onSubmit = (event) => {
         event.preventDefault();
         handleSetLanguage(event.target[0].value);
         handleSetLayout(event.target[1].value);
-        history('/');
+
+        if (layout === 'EX') history('/');
+        if (layout === 'SIM') history('/SimpleMain')
     }
 
     const onReset = (event) => {
         event.preventDefault();
         handleResetPreferences();
-        history('/');
+
+        if (layout === 'EX') history('/');
+        if (layout === 'SIM') history('/SimpleMain')
     }
 
     return (
