@@ -17,12 +17,16 @@ export class ChromeLocalStorageService {
         });
     }
 
+    createItem(name, value) {
+        chrome.storage.sync.set(name, JSON.stringify(value));
+    }
+
     getItemBy(query) {
         return new Promise(( resolve, reject ) => {
             chrome.storage.sync.get([query], function( result ) {
 
                 if ( !result ) {
-                    return resolve('extended');
+                    return resolve(null);
                 }
 
                 resolve(JSON.parse(result.tabs));

@@ -23,4 +23,21 @@ export class MokeLocalStorageService {
             resolve(tabsUrls);
         });
     }
+
+    createItem(name, value) {
+
+    }
+
+    getItemBy(query) {
+
+        return new Promise((resolve, reject) => {
+            switch (query) {
+                case 'language':
+                    return resolve('EN-US');
+                case 'layout':
+                    return resolve('EX');
+            }
+        })
+
+    }
 }
