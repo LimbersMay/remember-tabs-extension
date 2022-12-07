@@ -1,5 +1,5 @@
 import {useUserPreferences} from "../../hooks/useUserPreferences.js";
-import {ChromeLocalStorageService} from "../home/services/index.js";
+import {ChromeLocalStorageService, MokeLocalStorageService} from "../home/services/index.js";
 import {PreferencesContext} from "./PreferencesContext";
 
 export const PreferencesProvider = ({ children }) => {
@@ -17,7 +17,7 @@ export const PreferencesProvider = ({ children }) => {
     } = useUserPreferences(localStorageService);
 
     return (
-        <PreferencesContext.provider value={
+        <PreferencesContext.Provider value={
             {
                 language,
                 layout,
@@ -28,7 +28,7 @@ export const PreferencesProvider = ({ children }) => {
             }
         }>
             {children}
-        </PreferencesContext.provider>
+        </PreferencesContext.Provider>
     )
 
 }
