@@ -6,8 +6,21 @@ export const useUserPreferences = (localStorageService) => {
     const [ layout, setLayout ] = useState('extended');
 
     useEffect(() => {
-        localStorageService.getItemBy('language').then( language => setLanguage(language));
-        localStorageService.getItemBy('layout').then( layout => setLayout(layout));
+        localStorageService.getItemBy('language').then( language => {
+            if (!language) {
+                return;
+            }
+
+            setLanguage(language);
+        });
+
+        localStorageService.getItemBy('layout').then( layout => {
+            if (!layout) {
+                return;
+            }
+
+            setLayout(layout);
+        });
     }, []);
 
     useEffect(() => {
@@ -27,7 +40,7 @@ export const useUserPreferences = (localStorageService) => {
     }
 
     const handleGetLayout = () => {
-        return localStorageService.getItemBy('layout');
+        return localStorageService.getItemBy('layout') ;
     }
 
     const handleSetLayout = (layout) => {
