@@ -6,7 +6,8 @@ import {useNavigate} from "react-router-dom";
 
 export const OptionsApp = () => {
 
-    const { handleSetLanguage, handleSetLayout } = useContext(PreferencesContext);
+    const { handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
+
     const history = useNavigate();
     const onSubmit = (event) => {
         event.preventDefault();
@@ -15,8 +16,14 @@ export const OptionsApp = () => {
         history('/');
     }
 
+    const onReset = (event) => {
+        event.preventDefault();
+        handleResetPreferences();
+        history('/');
+    }
+
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} onReset={onReset}>
             <PreferencesContainer/>
             <OptionButtons/>
         </form>
