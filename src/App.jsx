@@ -5,6 +5,8 @@ import {MainLayout} from './layouts/MainLayout';
 
 import {MemoryRouter, Route, Routes} from 'react-router-dom';
 import {OptionsApp} from "./components/options/OptionsApp";
+import {PreferencesProvider} from "./components/context/PreferencesProvider";
+import {LanguageProvider} from "./components/context/LanguageProvider";
 
 
 export const App = () => {
@@ -12,14 +14,18 @@ export const App = () => {
     return (
         <MemoryRouter >
             <TabProvider>
-                <MainLayout>
+                <PreferencesProvider>
+                    <LanguageProvider>
+                        <MainLayout>
 
-                    <Routes>
-                        <Route path='/' element={<HomeApp/>}/>
-                        <Route path='/options-extended' element={<OptionsApp/>}/>
-                    </Routes>
+                            <Routes>
+                                <Route path='/' element={<HomeApp/>}/>
+                                <Route path='/options-extended' element={<OptionsApp/>}/>
+                            </Routes>
 
-                </MainLayout>
+                        </MainLayout>
+                    </LanguageProvider>
+                </PreferencesProvider>
             </TabProvider>
         </MemoryRouter>
     )
