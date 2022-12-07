@@ -2,6 +2,7 @@
 import React from 'react';
 import { Header } from '../components/home/components';
 import * as S from '../styled-components/MainLayout.style.jsx';
+import {Outlet} from "react-router-dom";
 
 export const MainLayout = ({ children }) => {
     return (
@@ -10,6 +11,8 @@ export const MainLayout = ({ children }) => {
             <Header />
 
             {children}
+
+            <Outlet />
         </S.MainLayout>
     )
 }
