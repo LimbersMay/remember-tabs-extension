@@ -18,7 +18,7 @@ const dictionaries = {
                 key: "ES-MX"
             },
             {
-                value: "English",
+                value: "Inglés",
                 key: "EN-US"
             }
         ],

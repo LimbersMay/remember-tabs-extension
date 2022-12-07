@@ -13,7 +13,8 @@ export const PreferencesProvider = ({ children }) => {
         handleGetLanguage,
         handleSetLanguage,
         handleGetLayout,
-        handleSetLayout
+        handleSetLayout,
+        handleResetPreferences
     } = useUserPreferences(localStorageService);
 
     return (
@@ -24,7 +25,8 @@ export const PreferencesProvider = ({ children }) => {
                 handleGetLanguage,
                 handleSetLanguage,
                 handleGetLayout,
-                handleSetLayout
+                handleSetLayout,
+                handleResetPreferences
             }
         }>
             {children}
