@@ -2,15 +2,14 @@ import {useEffect, useState} from "react";
 
 export const useUserPreferences = (localStorageService) => {
 
-    const [ language, setLanguage ] = useState('en-US');
-    const [ layout, setLayout ] = useState('extended');
+    const [ language, setLanguage ] = useState('EN-US');
+    const [ layout, setLayout ] = useState('EX');
 
     useEffect(() => {
         localStorageService.getItemBy('language').then( language => {
             if (!language) {
                 return;
             }
-
             setLanguage(language);
         });
 
