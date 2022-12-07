@@ -5,7 +5,7 @@ import {PreferencesContext} from "./PreferencesContext.jsx";
 const dictionaries = {
     'ES-MX': {
         openButtonCard: 'Abrir',
-        openButton: 'Abrir todo',
+        openButton: 'Abrir',
         deleteButton: "Borrar",
         saveButton: "Guardar",
         optionsButton: "Opciones",
