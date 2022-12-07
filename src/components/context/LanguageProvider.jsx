@@ -25,13 +25,16 @@ const dictionaries = {
         selectLayout: [
             {
                 value: "Extendido",
-                key: "EX"
+                key: "EXTENDED"
             },
             {
                 value: "Simple",
-                key: "SIM"
+                key: "SIMPLE"
             }
-        ]
+        ],
+        simplesaveButton: "Guardar Tabs",
+        simpleOpenButton: "Reabrir Tabs",
+        simpleDeleteButton: "Borrar Tabs"
     },
     'EN-US': {
         openButtonCard: 'Open',
@@ -55,13 +58,16 @@ const dictionaries = {
         selectLayout: [
             {
                 value: "Extended",
-                key: "EX"
+                key: "EXTENDED"
             },
             {
                 value: "Simple",
-                key: "SIM"
+                key: "SIMPLE"
             }
-        ]
+        ],
+        simplesaveButton: "Save current Tabs",
+        simpleOpenButton: "Reopen Tabs",
+        simpleDeleteButton: "Delete Tabs"
     }
 }
 
