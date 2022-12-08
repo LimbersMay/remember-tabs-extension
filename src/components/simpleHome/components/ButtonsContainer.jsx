@@ -1,21 +1,52 @@
 
 import * as S  from '../styled-components';
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {LanguageContext} from "../../context/LanguageContext.jsx";
 import {useNavigate} from "react-router-dom";
+
+import {TabContext} from "../../home/components/context/TabContext.jsx";
 
 export const ButtonsContainer = () => {
 
     const { getUSerDictionary } = useContext(LanguageContext);
-    const { simplesaveButton, simpleOpenButton, simpleDeleteButton, optionsButton } = getUSerDictionary();
+    const {
+        simplesaveButton,
+        simpleOpenButton,
+        simpleDeleteButton,
+        optionsButton,
+        simpleSucessMessage,
+        simpleReopenTabsMessage,
+        simpleDeleteTabsMessage
+    } = getUSerDictionary();
+
+    const { handleSetTabs, handleOpenTabs, handleDeleteTabs } = useContext(TabContext);
 
     const history = useNavigate();
+
+    const [ message, setMessage ] = useState(null);
+    const [ messageColor, setMessageColor ] = useState('black');
+
+    const handleSetSuccessMessage = () => {
+        setMessage(simpleSucessMessage);
+        setMessageColor('#1B5E20')
+    }
+
+    const handleSetOpenTabsMessage = () => {
+        setMessage(simpleReopenTabsMessage);
+        setMessageColor('#004D40');
+    }
+
+    const handleSetDeleteTabsMessage = () => {
+        setMessage(simpleDeleteTabsMessage);
+        setMessageColor('#B71C1C');
+    }
 
     return (
         <S.ButtonsContainer>
             <S.Button
                 background={ '#2E7D32' }
                 hoverColor={'#2a692d'}
+                onClick={() => {handleSetTabs(); handleSetSuccessMessage()}}
             >
                 {simplesaveButton}
             </S.Button>
@@ -23,6 +54,7 @@ export const ButtonsContainer = () => {
             <S.Button
                 background={'#00695C'}
                 hoverColor={'#005a4f'}
+                onClick={() => {handleOpenTabs(); handleSetOpenTabsMessage()}}
             >
                 {simpleOpenButton}
             </S.Button>
@@ -30,6 +62,7 @@ export const ButtonsContainer = () => {
             <S.Button
                 background={'#C62828'}
                 hoverColor={'#b71c1c'}
+                onClick={() => {handleDeleteTabs(); handleSetDeleteTabsMessage()}}
             >
                 {simpleDeleteButton}
             </S.Button>
@@ -41,6 +74,12 @@ export const ButtonsContainer = () => {
             >
                 {optionsButton}
             </S.Button>
+
+            <S.Message color={messageColor}>
+                <p>
+                    {message}
+                </p>
+            </S.Message>
 
         </S.ButtonsContainer>
     )
