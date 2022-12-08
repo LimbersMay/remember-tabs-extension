@@ -6,27 +6,25 @@ import {useNavigate} from "react-router-dom";
 
 export const OptionsApp = () => {
 
-    const { handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
+    const { layout, handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
 
     const history = useNavigate();
     const onSubmit = (event) => {
         event.preventDefault();
 
-        const language = event.target[0].value;
-        const layout = event.target[1].value;
+        const formLanguage = event.target[0].value;
+        const formLayout = event.target[1].value;
 
-        handleSetLanguage(language);
-        handleSetLayout(layout);
+        handleSetLanguage(formLanguage);
+        handleSetLayout(formLayout);
 
-        if (layout === 'EXTENDED') history('/home-extended');
-        if (layout === 'SIMPLE') history('/simple-home');
+        if (formLayout === 'EXTENDED') history('/home-extended');
+        if (formLayout === 'SIMPLE') history('/simple-home');
     }
 
     const onReset = (event) => {
         event.preventDefault();
         handleResetPreferences();
-
-        const layout = event.target[1].value;
 
         if (layout === 'EXTENDED') history('/home-extended');
         if (layout === 'SIMPLE') history('/simple-home');
