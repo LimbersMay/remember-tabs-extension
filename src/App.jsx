@@ -24,10 +24,11 @@ export const App = () => {
 
                         <Routes>
                             <Route element={<MainLayout/>}>
-                                <Route path='/' element={<ConditionalRoute />}/>
                                 <Route path='/home-extended' element={<HomeApp />} />
                                 <Route path='/options-extended' element={<OptionsApp/>}/>
                             </Route>
+
+                            <Route path='/' element={<ConditionalRoute />}/>
 
                             <Route element={<SimpleMainLayout/>}>
                                 <Route path='/simple-home' element={<SimpleHomeApp/>}/>
