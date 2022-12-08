@@ -18,8 +18,8 @@ export const OptionsApp = () => {
         handleSetLanguage(language);
         handleSetLayout(layout);
 
-        if (layout === 'EXTENDED') history('/');
-        if (layout === 'SIMPLE') history('/SimpleMain');
+        if (layout === 'EXTENDED') history('/home-extended');
+        if (layout === 'SIMPLE') history('/simple-home');
     }
 
     const onReset = (event) => {
@@ -28,8 +28,8 @@ export const OptionsApp = () => {
 
         const layout = event.target[1].value;
 
-        if (layout === 'EXTENDED') history('/');
-        if (layout === 'SIMPLE') history('/SimpleMain')
+        if (layout === 'EXTENDED') history('/home-extended');
+        if (layout === 'SIMPLE') history('/simple-home');
     }
 
     return (
