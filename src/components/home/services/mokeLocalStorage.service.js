@@ -35,7 +35,7 @@ export class MokeLocalStorageService {
                 case 'language':
                     return resolve('EN-US');
                 case 'layout':
-                    return resolve('EX');
+                    return resolve('SIMPLE');
             }
         })
 
