@@ -6,28 +6,41 @@ import {useNavigate} from "react-router-dom";
 
 export const OptionsApp = () => {
 
-    const { layout, handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
+    const { handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
 
     const history = useNavigate();
     const onSubmit = (event) => {
         event.preventDefault();
-        handleSetLanguage(event.target[0].value);
-        handleSetLayout(event.target[1].value);
 
-        if (layout === 'EX') history('/');
-        if (layout === 'SIM') history('/SimpleMain')
+        const language = event.target[0].value;
+        const layout = event.target[1].value;
+
+        handleSetLanguage(language);
+        handleSetLayout(layout);
+
+        if (layout === 'EXTENDED') history('/');
+        if (layout === 'SIMPLE') history('/SimpleMain');
     }
 
     const onReset = (event) => {
         event.preventDefault();
         handleResetPreferences();
 
-        if (layout === 'EX') history('/');
-        if (layout === 'SIM') history('/SimpleMain')
+        const layout = event.target[1].value;
+
+        if (layout === 'EXTENDED') history('/');
+        if (layout === 'SIMPLE') history('/SimpleMain')
     }
 
     return (
-        <form onSubmit={onSubmit} onReset={onReset}>
+        <form
+            onSubmit={onSubmit}
+            onReset={onReset}
+            style={{
+                width: "100%",
+                height: "100%"
+            }}
+        >
             <PreferencesContainer/>
             <OptionButtons/>
         </form>
