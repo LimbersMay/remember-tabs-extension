@@ -37,7 +37,7 @@ export const ButtonsContainer = () => {
             <S.Button
                 background={'#455A64'}
                 hoverColor={'#37474F'}
-                onClick={ () => { history('/SimpleOptions');} }
+                onClick={ () => { history('/simple-options');} }
             >
                 {optionsButton}
             </S.Button>
