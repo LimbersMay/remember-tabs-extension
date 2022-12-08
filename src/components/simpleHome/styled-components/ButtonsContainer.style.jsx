@@ -1,9 +1,7 @@
 import styled from "styled-components";
-
 export const ButtonsContainer = styled.div`
+  margin-top: 10px;
   display: flex;
-  gap: 15px;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
 `

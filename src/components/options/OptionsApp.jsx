@@ -11,19 +11,36 @@ export const OptionsApp = () => {
     const history = useNavigate();
     const onSubmit = (event) => {
         event.preventDefault();
-        handleSetLanguage(event.target[0].value);
-        handleSetLayout(event.target[1].value);
-        history('/');
+
+        const language = event.target[0].value;
+        const layout = event.target[1].value;
+
+        handleSetLanguage(language);
+        handleSetLayout(layout);
+
+        if (layout === 'EXTENDED') history('/home-extended');
+        if (layout === 'SIMPLE') history('/simple-home');
     }
 
     const onReset = (event) => {
         event.preventDefault();
         handleResetPreferences();
-        history('/');
+
+        const layout = event.target[1].value;
+
+        if (layout === 'EXTENDED') history('/home-extended');
+        if (layout === 'SIMPLE') history('/simple-home');
     }
 
     return (
-        <form onSubmit={onSubmit} onReset={onReset}>
+        <form
+            onSubmit={onSubmit}
+            onReset={onReset}
+            style={{
+                width: "100%",
+                height: "100%"
+            }}
+        >
             <PreferencesContainer/>
             <OptionButtons/>
         </form>

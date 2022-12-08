@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import { StorageController } from '../controllers/storage.controller';
 import { TabController } from "../controllers/tab.controller";
 import {
-    ChromeTabService,
     ChromeLocalStorageService,
-    MokeLocalTabService,
+    ChromeTabService,
     MokeLocalStorageService,
-
+    MokeLocalTabService
 } from "../services";
 
 const storageAccess = new StorageController(new ChromeLocalStorageService());

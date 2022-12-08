@@ -1,12 +1,17 @@
-import React from 'react';
-import {TabProvider} from './components/home/components/context/TabProvider';
-import {HomeApp} from './components/home/HomeApp';
-import {MainLayout} from './layouts/MainLayout';
-
 import {MemoryRouter, Route, Routes} from 'react-router-dom';
+
 import {OptionsApp} from "./components/options/OptionsApp";
-import {PreferencesProvider} from "./components/context/PreferencesProvider";
+import {HomeApp} from './components/home/HomeApp';
+import {SimpleHomeApp} from "./components/simpleHome/SimpleHomeApp";
+
 import {LanguageProvider} from "./components/context/LanguageProvider";
+import {PreferencesProvider} from "./components/context/PreferencesProvider";
+import {TabProvider} from './components/home/components/context/TabProvider';
+
+import {MainLayout} from './layouts/MainLayout';
+import {SimpleMainLayout} from "./layouts/SimpleMainLayout.style.jsx";
+
+import {ConditionalRoute} from "./components/ConditionalRoute";
 
 
 export const App = () => {
@@ -16,14 +21,21 @@ export const App = () => {
             <TabProvider>
                 <PreferencesProvider>
                     <LanguageProvider>
-                        <MainLayout>
 
-                            <Routes>
-                                <Route path='/' element={<HomeApp/>}/>
+                        <Routes>
+                            <Route element={<MainLayout/>}>
+                                <Route path='/home-extended' element={<HomeApp />} />
                                 <Route path='/options-extended' element={<OptionsApp/>}/>
-                            </Routes>
+                            </Route>
 
-                        </MainLayout>
+                            <Route path='/' element={<ConditionalRoute />}/>
+
+                            <Route element={<SimpleMainLayout/>}>
+                                <Route path='/simple-home' element={<SimpleHomeApp/>}/>
+                                <Route path='/simple-options' element={<OptionsApp/>}/>
+                            </Route>
+                        </Routes>
+
                     </LanguageProvider>
                 </PreferencesProvider>
             </TabProvider>
