@@ -34,7 +34,10 @@ const dictionaries = {
         ],
         simplesaveButton: "Guardar Tabs",
         simpleOpenButton: "Reabrir Tabs",
-        simpleDeleteButton: "Borrar Tabs"
+        simpleDeleteButton: "Borrar Tabs",
+        simpleSucessMessage: "Tabs guardados",
+        simpleReopenTabsMessage: "Tabs abiertos",
+        simpleDeleteTabsMessage: "Tabs borrados",
     },
     'EN-US': {
         openButtonCard: 'Open',
@@ -67,7 +70,10 @@ const dictionaries = {
         ],
         simplesaveButton: "Save current Tabs",
         simpleOpenButton: "Reopen Tabs",
-        simpleDeleteButton: "Delete Tabs"
+        simpleDeleteButton: "Delete Tabs",
+        simpleSucessMessage: "Tabs saved",
+        simpleReopenTabsMessage: "Tabs opened",
+        simpleDeleteTabsMessage: "Tabs deleted",
     }
 }
 
