@@ -11,8 +11,6 @@ export const ConditionalRoute = () => {
         handleGetLayout().then(layout => {
             if (layout === "EXTENDED") history('/home-extended');
             if (layout === "SIMPLE") history('/simple-home');
-
-            console.log("USE EFFECT LANZADO DENTRO DE CONDITIONAL LAYOUT: ", layout);
         })
     }, []);
 
