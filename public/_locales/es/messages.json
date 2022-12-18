@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Remember-Tabs - Guarda & Restaura tus ventanas",
+    "message": "ReTabs - Guarda & Restaura tus ventanas",
     "description": "Title of the extension"
   },
   "extDescription": {
-    "message": "Remember-Tabs guarda tus ventanas incluso si apagas la computadora para reabrirlos más tarde",
+    "message": "ReTabs guarda tus ventanas incluso si apagas la computadora para reabrirlos más tarde",
     "description": "Description of the extension"
   }
 }

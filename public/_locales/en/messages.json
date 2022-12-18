@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Remember-Tabs - Save & Restore your tabs",
+    "message": "ReTabs - Save & Restore your tabs",
     "description": "Title of the extension"
   },
   "extDescription": {
-    "message": "Remember-Tabs remember your tabs even if you turn off your computer and then you can restore them",
+    "message": "ReTabs remember your tabs even if you turn off your computer and then you can restore them",
     "description": "Description of the extension"
   }
 }
