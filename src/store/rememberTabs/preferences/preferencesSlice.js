@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const preferencesSlice = createSlice({
     name: 'preferences',
     initialState: {
-        language: 'ES-US',
+        language: 'EN-US',
         layout: 'SIMPLE'
     },
     reducers: {
