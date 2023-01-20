@@ -7,8 +7,8 @@ import {PreferencesContext, LanguageContext} from "../../context";
 export const PreferencesContainer = () => {
 
     const { language, layout } = useContext( PreferencesContext );
-    const { getUSerDictionary } = useContext( LanguageContext );
-    const {selectLanguage, selectLayout} = getUSerDictionary();
+    const { userDictionary } = useContext(LanguageContext);
+    const {selectLanguage, selectLayout} = userDictionary;
 
     return (
         <S.PreferencesContainer>
