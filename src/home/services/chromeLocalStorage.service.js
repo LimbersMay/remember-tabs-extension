@@ -52,4 +52,20 @@ export class ChromeLocalStorageService {
             this.setTabs(newTabs);
         });
     }
+
+    getUserLanguage() {
+        return this.getItemBy("language");
+    }
+
+    setUserLanguage(language) {
+        this.createItem("language", language);
+    }
+
+    getUserLayout() {
+        return this.getItemBy("layout");
+    }
+
+    setUserLayout(layout) {
+        this.createItem("layout", layout);
+    }
 }
