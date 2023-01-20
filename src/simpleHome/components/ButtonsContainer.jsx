@@ -3,12 +3,14 @@ import * as S  from '../styled-components/index.js';
 import {useContext, useState} from "react";
 import {LanguageContext} from "../../context";
 import {useNavigate} from "react-router-dom";
-
-import {TabContext} from "../../home/components/context/TabContext.jsx";
+import {useDispatch} from "react-redux";
+import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs/index.js";
 
 export const ButtonsContainer = () => {
 
-    const { getUSerDictionary } = useContext(LanguageContext);
+    const dispatch = useDispatch();
+
+    const { userDictionary } = useContext(LanguageContext);
     const {
         simplesaveButton,
         simpleOpenButton,
@@ -17,9 +19,19 @@ export const ButtonsContainer = () => {
         simpleSucessMessage,
         simpleReopenTabsMessage,
         simpleDeleteTabsMessage
-    } = getUSerDictionary();
+    } = userDictionary;
 
-    const { handleSetTabs, handleOpenTabs, handleDeleteTabs } = useContext(TabContext);
+    const handleSaveTabs = () => {
+        dispatch(startSaveTabs());
+    }
+
+    const handleOpenTabs = () => {
+        dispatch(startOpenTabs());
+    }
+
+    const handleDeleteTabs = () => {
+        dispatch(startDeleteTabs());
+    }
 
     const history = useNavigate();
 
@@ -46,7 +58,7 @@ export const ButtonsContainer = () => {
             <S.Button
                 background={ '#2E7D32' }
                 hoverColor={'#2a692d'}
-                onClick={() => {handleSetTabs(); handleSetSuccessMessage()}}
+                onClick={() => {handleSaveTabs(); handleSetSuccessMessage()}}
             >
                 {simplesaveButton}
             </S.Button>
@@ -70,7 +82,7 @@ export const ButtonsContainer = () => {
             <S.Button
                 background={'#455A64'}
                 hoverColor={'#37474F'}
-                onClick={ () => { history('/simple-options');} }
+                onClick={ () => { history('/options');} }
             >
                 {optionsButton}
             </S.Button>
