@@ -1,11 +1,18 @@
 export class ChromeLocalStorageService {
     
     setTabs( tabs ) {
-        chrome.storage.sync.set( {"tabs": JSON.stringify(tabs)} );
+        return new Promise(( resolve, reject ) => {
+            try {
+                chrome.storage.sync.set({"tabs": JSON.stringify(tabs)}, function() {});
+                resolve();
+            } catch (e) {
+                reject(e);
+            }
+        });
     }
 
     getTabsUrls() {
-        return new Promise(( resolve, reject ) => {
+        return new Promise(( resolve ) => {
             chrome.storage.sync.get(["tabs"], function( result ) {
 
                 if ( !result.tabs ) {
@@ -27,7 +34,7 @@ export class ChromeLocalStorageService {
 
     getItemBy(query) {
 
-        return new Promise(( resolve, reject ) => {
+        return new Promise(( resolve ) => {
             chrome.storage.sync.get([query], function( result ) {
 
                 if ( !result[query]) {
@@ -37,5 +44,12 @@ export class ChromeLocalStorageService {
                 resolve(result[query]);
             });
         })
+    }
+
+    deleteItemById(tabId) {
+        this.getTabsUrls().then( tabs => {
+            const newTabs = tabs.filter(tab => tab.id !== tabId);
+            this.setTabs(newTabs);
+        });
     }
 }
