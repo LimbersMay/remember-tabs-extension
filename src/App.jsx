@@ -1,17 +1,16 @@
 import {MemoryRouter, Route, Routes} from 'react-router-dom';
 
-import {OptionsApp} from "./components/options/OptionsApp";
-import {HomeApp} from './components/home/HomeApp';
-import {SimpleHomeApp} from "./components/simpleHome/SimpleHomeApp";
+import {OptionsApp} from "./options/OptionsApp";
+import {HomeApp} from './home/HomeApp';
+import {SimpleHomeApp} from "./simpleHome/SimpleHomeApp";
 
-import {LanguageProvider} from "./components/context/LanguageProvider";
-import {PreferencesProvider} from "./components/context/PreferencesProvider";
-import {TabProvider} from './components/home/components/context/TabProvider';
+import {LanguageProvider, PreferencesProvider} from "./context";
 
-import {MainLayout} from './layouts/MainLayout';
-import {SimpleMainLayout} from "./layouts/SimpleMainLayout.style.jsx";
+import {MainLayout} from './layouts';
+import {SimpleMainLayout} from "./layouts";
 
 import {ConditionalRoute} from "./components/ConditionalRoute";
+import {TabProvider} from "./home/components/context/TabProvider.jsx";
 
 
 export const App = () => {

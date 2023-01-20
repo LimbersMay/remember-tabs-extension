@@ -1,5 +1,5 @@
 import {useContext, useEffect} from "react";
-import {PreferencesContext} from "./context/PreferencesContext.jsx";
+import {PreferencesContext} from "../context";
 import {useNavigate} from "react-router-dom";
 
 export const ConditionalRoute = () => {

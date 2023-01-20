@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Header } from '../components/home/components';
+import { Header } from '../home/components';
 import * as S from '../styled-components/MainLayout.style.jsx';
 import {Outlet} from "react-router-dom";
 
