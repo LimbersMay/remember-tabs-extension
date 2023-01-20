@@ -1,12 +1,14 @@
 
 import * as S from '../styled-components';
-import { Select } from "./Select.jsx";
+import { Select } from "./Select";
 import {useContext} from "react";
-import {PreferencesContext, LanguageContext} from "../../context";
+import { LanguageContext } from "../../context";
+import {useSelector} from "react-redux";
 
 export const PreferencesContainer = () => {
 
-    const { language, layout } = useContext( PreferencesContext );
+    const { language, layout } = useSelector(state => state.preferences);
+
     const { userDictionary } = useContext(LanguageContext);
     const {selectLanguage, selectLayout} = userDictionary;
 
