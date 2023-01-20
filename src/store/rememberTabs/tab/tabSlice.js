@@ -10,7 +10,7 @@ export const tabSlice = createSlice({
             state.tabs = action.payload;
         },
         deleteTabs: (state) => {
-            state.tabs = []
+            state.tabs = [];
         },
         deleteTabById: (state, action) => {
             state.tabs = state.tabs.filter(tab => tab.id !== action.payload);
