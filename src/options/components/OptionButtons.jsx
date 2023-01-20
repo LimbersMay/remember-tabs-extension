@@ -4,8 +4,8 @@ import {LanguageContext} from "../../context";
 
 export const OptionButtons = () => {
 
-    const { getUSerDictionary } = useContext(LanguageContext);
-    const { saveButton, cancelButton } = getUSerDictionary();
+    const { userDictionary } = useContext(LanguageContext);
+    const { saveButton, cancelButton } = userDictionary;
 
     return (
         <S.ButtonsContainer>
