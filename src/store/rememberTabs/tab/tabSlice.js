@@ -3,15 +3,15 @@ import {createSlice} from '@reduxjs/toolkit';
 export const tabSlice = createSlice({
     name: 'tab',
     initialState: {
-        counter: 10
+        tabs: []
     },
     reducers: {
-        increment: (state, /* action */) => {
-            state.counter += 1;
+        setTabs: (state, action) => {
+            state.tabs = action.payload;
         },
     }
 });
 
 
 // Action creators are generated for each case reducer function
-export const {increment} = tabSlice.actions;
+export const {setTabs} = tabSlice.actions;
