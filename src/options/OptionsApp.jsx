@@ -1,12 +1,12 @@
 import {PreferencesContainer} from "./components/PreferencesContainer";
 import {OptionButtons} from "./components/OptionButtons";
-import {useContext} from "react";
-import {PreferencesContext} from "../context";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {startSaveLanguage, startSaveLayout} from "../store/rememberTabs";
 
 export const OptionsApp = () => {
 
-    const { layout, handleSetLanguage, handleSetLayout, handleResetPreferences } = useContext(PreferencesContext);
+    const dispatch = useDispatch();
 
     const history = useNavigate();
     const onSubmit = (event) => {
@@ -15,19 +15,16 @@ export const OptionsApp = () => {
         const formLanguage = event.target[0].value;
         const formLayout = event.target[1].value;
 
-        handleSetLanguage(formLanguage);
-        handleSetLayout(formLayout);
+        dispatch(startSaveLanguage(formLanguage));
+        dispatch(startSaveLayout(formLayout));
 
-        if (formLayout === 'EXTENDED') history('/home-extended');
-        if (formLayout === 'SIMPLE') history('/simple-home');
+        history("/")
     }
 
     const onReset = (event) => {
         event.preventDefault();
-        handleResetPreferences();
 
-        if (layout === 'EXTENDED') history('/home-extended');
-        if (layout === 'SIMPLE') history('/simple-home');
+        history("/")
     }
 
     return (
