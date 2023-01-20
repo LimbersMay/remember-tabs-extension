@@ -1,0 +1,43 @@
+import { Route, Routes } from "react-router-dom";
+import {SimpleHomeRouter} from "../simpleHome/routes/SimpleHomeRouter";
+import {HomeRouter} from "../home/routes/HomeRouter";
+import {OptionsRoutes} from "../options/routes/OptionsRoutes";
+import {useCheckUser} from "../hooks/useCheckUser";
+import {MainLayout, SimpleMainLayout} from "../layouts";
+
+export const AppRouter = () => {
+
+    const {checking: status, layout} = useCheckUser();
+
+    const simpleRoutes = (
+        <Route element={<SimpleMainLayout/>}>
+            <Route path="/*" element={<SimpleHomeRouter/>}/>
+            <Route path="/options" element={<OptionsRoutes/>}/>
+        </Route>
+    )
+
+    const extendedRoutes = (
+        <Route element={<MainLayout/>}>
+            <Route path="/*" element={<HomeRouter/>}/>
+            <Route path="/options" element={<OptionsRoutes/>}/>
+        </Route>
+    )
+
+    if (status === "checking") {
+        return null;
+    }
+
+    if (!layout) {
+        return null;
+    }
+
+    return (
+        <>
+            <Routes>
+                {
+                    layout === "EXTENDED" ? extendedRoutes : simpleRoutes
+                }
+            </Routes>
+        </>
+    )
+}
