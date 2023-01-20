@@ -1,15 +1,25 @@
 import { useContext } from "react";
+import {useDispatch} from "react-redux";
+
 import * as S from "../styled-components";
-import { TabContext } from "./context/TabContext";
 import {LanguageContext} from "../../context";
+import {startDeleteTab, startOpenTab} from "../../store/rememberTabs";
 
 export const TabItemButtons = ({ tab }) => {
 
-    const { handleOpenTab, handleDeleteTab } = useContext(TabContext);
+    const dispatch = useDispatch();
 
     // Obtenemos los textos del idioma del cliente
-    const { getUSerDictionary } = useContext(LanguageContext);
-    const { openButtonCard, deleteButton } = getUSerDictionary();
+    const { userDictionary } = useContext(LanguageContext);
+    const { openButtonCard, deleteButton } = userDictionary;
+
+    const handleDeleteTab = () => {
+        dispatch(startDeleteTab(tab.id));
+    }
+
+    const handleOpenTab = () => {
+        dispatch(startOpenTab(tab.id));
+    }
 
     return (
         <S.TabItemButtons>
@@ -18,7 +28,7 @@ export const TabItemButtons = ({ tab }) => {
                 background={'#00695C'}
                 hover={'#005a4f'}
 
-                onClick={ () => handleOpenTab(tab.id) }
+                onClick={ handleOpenTab }
             >
                 { openButtonCard }
             </S.TabItemButton>
@@ -27,7 +37,7 @@ export const TabItemButtons = ({ tab }) => {
                 background={'#C62828'}
                 hover={'#b71c1c'}
 
-                onClick={ () => handleDeleteTab(tab.id) }
+                onClick={ handleDeleteTab }
             >
                 { deleteButton }
             </S.TabItemButton>
