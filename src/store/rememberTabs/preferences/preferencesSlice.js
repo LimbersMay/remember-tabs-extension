@@ -3,15 +3,19 @@ import {createSlice} from '@reduxjs/toolkit';
 export const preferencesSlice = createSlice({
     name: 'preferences',
     initialState: {
-        counter: 10
+        language: 'ES-US',
+        layout: 'SIMPLE'
     },
     reducers: {
-        increment: (state, /* action */) => {
-            state.counter += 1;
+        setLanguage: (state, action) => {
+            state.language = action.payload;
         },
+        setLayout: (state, action) => {
+            state.layout = action.payload;
+        }
     }
 });
 
 
 // Action creators are generated for each case reducer function
-export const {increment} = preferencesSlice.actions;
+export const {setLanguage, setLayout} = preferencesSlice.actions
