@@ -4,7 +4,7 @@
     "description": "Title of the extension"
   },
   "extDescription": {
-    "message": "ReTabs remember your tabs even if you turn off your computer and then you can restore them",
+    "message": "ReTabs save your tabs even if you turn off your computer and then you can restore them",
     "description": "Description of the extension"
   }
 }
