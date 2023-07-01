@@ -1,7 +1,7 @@
 export class MokeLocalStorageService {
 
     constructor() {
-        this.language = 'FR-FR';
+        this.language = 'EN-US';
         this.layout = 'EXTENDED';
         this.tabs = [];
     }
