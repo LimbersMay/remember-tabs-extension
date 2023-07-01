@@ -8,7 +8,8 @@ export const MainButton = styled.button`
     border-style: none;
     border-radius: 5px;
     font-weight: bold;
-    width: 70px;
+    min-width: 70px;
+    max-width: 80px;
     padding: 4px;
     min-height: 35px;
 
