@@ -10,17 +10,17 @@ export const PreferencesContainer = () => {
     const { language, layout } = useSelector(state => state.preferences);
 
     const { userDictionary } = useContext(LanguageContext);
-    const {selectLanguage, selectLayout} = userDictionary;
+    const {languageOptions, layoutOptions} = userDictionary;
 
     return (
         <S.PreferencesContainer>
             <Select
-                options={ selectLanguage }
+                options={ languageOptions }
                 selected={ language }
                 name={ "language" }
             />
             <Select
-                options={ selectLayout }
+                options={ layoutOptions }
                 selected={ layout }
                 name={ "layout" }
             />
