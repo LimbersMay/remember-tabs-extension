@@ -71,7 +71,43 @@ const dictionaries = {
         simpleSucessMessage: "Tabs saved",
         simpleReopenTabsMessage: "Tabs opened",
         simpleDeleteTabsMessage: "Tabs deleted",
-    }
+    },
+    'FR-FR': {
+        openButtonCard: 'Ouvrir',
+        openButton: 'Réouvrir',
+        deleteButton: "Supprimer",
+        saveButton: "Enregistrer",
+        optionsButton: "Options",
+        placeholderSelectLanguage: "Sélectionner la langue",
+        placeholderSelectLayout: "Sélectionner la mise en page",
+        cancelButton: "Annuler",
+        selectLanguage: [
+            {
+                value: "Espagnol",
+                key: "ES-MX"
+            },
+            {
+                value: "Anglais",
+                key: "EN-US"
+            }
+        ],
+        selectLayout: [
+            {
+                value: "Étendu",
+                key: "EXTENDED"
+            },
+            {
+                value: "Simple",
+                key: "SIMPLE"
+            }
+        ],
+        simplesaveButton: "Enregistrer les onglets",
+        simpleOpenButton: "Réouvrir les onglets",
+        simpleDeleteButton: "Supprimer les onglets",
+        simpleSucessMessage: "Onglets enregistrés",
+        simpleReopenTabsMessage: "Onglets réouverts avec succès",
+        simpleDeleteTabsMessage: "Onglets supprimés",
+    },
 }
 
 export default dictionaries;
