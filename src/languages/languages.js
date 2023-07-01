@@ -9,7 +9,7 @@ const dictionaries = {
         placeholderSelectLanguage: "Seleccionar idioma",
         placeholderSelectLayout: "Seleccionar diseño",
         cancelButton: "Cancelar",
-        selectLanguage: [
+        languageOptions: [
             {
                 value: "Español",
                 key: "ES-MX"
@@ -17,9 +17,13 @@ const dictionaries = {
             {
                 value: "Inglés",
                 key: "EN-US"
+            },
+            {
+                value: "Frances",
+                key: "FR-FR"
             }
         ],
-        selectLayout: [
+        layoutOptions: [
             {
                 value: "Extendido",
                 key: "EXTENDED"
@@ -45,7 +49,7 @@ const dictionaries = {
         placeholderSelectLanguage: "Select language",
         placeholderSelectLayout: "Select layout",
         cancelButton: "Cancel",
-        selectLanguage: [
+        languageOptions: [
             {
                 value: "Spanish",
                 key: "ES-MX"
@@ -53,9 +57,13 @@ const dictionaries = {
             {
                 value: "English",
                 key: "EN-US"
+            },
+            {
+                value: "French",
+                key: "FR-FR"
             }
         ],
-        selectLayout: [
+        layoutOptions: [
             {
                 value: "Extended",
                 key: "EXTENDED"
@@ -81,7 +89,7 @@ const dictionaries = {
         placeholderSelectLanguage: "Sélectionner la langue",
         placeholderSelectLayout: "Sélectionner la mise en page",
         cancelButton: "Annuler",
-        selectLanguage: [
+        languageOptions: [
             {
                 value: "Espagnol",
                 key: "ES-MX"
@@ -89,9 +97,13 @@ const dictionaries = {
             {
                 value: "Anglais",
                 key: "EN-US"
+            },
+            {
+                value: "français",
+                key: "FR-FR"
             }
         ],
-        selectLayout: [
+        layoutOptions: [
             {
                 value: "Étendu",
                 key: "EXTENDED"
