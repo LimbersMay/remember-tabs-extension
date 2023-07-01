@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "ReTabs - Enregistrez et restaurez vos fenêtres",
+    "description": "Titre de l'extension"
+  },
+  "extDescription": {
+    "message": "ReTabs enregistre vos fenêtres même si vous éteignez votre ordinateur afin de les rouvrir ultérieurement",
+    "description": "Description de l'extension"
+  }
+}
