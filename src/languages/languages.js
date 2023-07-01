@@ -84,7 +84,7 @@ const dictionaries = {
         openButtonCard: 'Ouvrir',
         openButton: 'Réouvrir',
         deleteButton: "Supprimer",
-        saveButton: "Enregistrer",
+        saveButton: "Sauvegarder",
         optionsButton: "Options",
         placeholderSelectLanguage: "Sélectionner la langue",
         placeholderSelectLayout: "Sélectionner la mise en page",
