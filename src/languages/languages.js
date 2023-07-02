@@ -85,7 +85,7 @@ const dictionaries = {
         openButton: 'Réouvrir',
         deleteButton: "Supprimer",
         saveButton: "Sauvegarder",
-        optionsButton: "Options",
+        optionsButton: "Paramètres",
         placeholderSelectLanguage: "Sélectionner la langue",
         placeholderSelectLayout: "Sélectionner la mise en page",
         cancelButton: "Annuler",
@@ -113,13 +113,13 @@ const dictionaries = {
                 key: "SIMPLE"
             }
         ],
-        simplesaveButton: "Enregistrer les onglets",
+        simplesaveButton: "Sauvegarder les onglets",
         simpleOpenButton: "Réouvrir les onglets",
         simpleDeleteButton: "Supprimer les onglets",
-        simpleSucessMessage: "Onglets enregistrés",
-        simpleReopenTabsMessage: "Onglets réouverts avec succès",
-        simpleDeleteTabsMessage: "Onglets supprimés",
-    },
+        simpleSucessMessage: "Les onglets ont été enregistrés",
+        simpleReopenTabsMessage: "Les onglets ont été réouverts",
+        simpleDeleteTabsMessage: "Les onglets ont été supprimés",
+    }
 }
 
 export default dictionaries;
