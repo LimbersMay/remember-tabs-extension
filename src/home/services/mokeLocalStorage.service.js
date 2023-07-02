@@ -11,7 +11,7 @@ export class MokeLocalStorageService {
     }
 
     getTabsUrls() {
-        return new Promise(( resolve, reject ) => {
+        return new Promise(( resolve) => {
 
             const tabsUrls = [
                 {
