@@ -9,7 +9,7 @@ export const MainButton = styled.button`
     border-radius: 5px;
     font-weight: bold;
     min-width: 70px;
-    max-width: 80px;
+    max-width: 90px;
     padding: 4px;
     min-height: 35px;
 
