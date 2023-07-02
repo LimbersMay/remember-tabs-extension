@@ -19,7 +19,7 @@ const dictionaries = {
                 key: "EN-US"
             },
             {
-                value: "Frances",
+                value: "Francés",
                 key: "FR-FR"
             }
         ],
