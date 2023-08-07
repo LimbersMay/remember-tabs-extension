@@ -9,7 +9,7 @@ const dictionaries = {
         placeholderSelectLanguage: "Seleccionar idioma",
         placeholderSelectLayout: "Seleccionar diseño",
         cancelButton: "Cancelar",
-        selectLanguage: [
+        languageOptions: [
             {
                 value: "Español",
                 key: "ES-MX"
@@ -17,9 +17,13 @@ const dictionaries = {
             {
                 value: "Inglés",
                 key: "EN-US"
+            },
+            {
+                value: "Francés",
+                key: "FR-FR"
             }
         ],
-        selectLayout: [
+        layoutOptions: [
             {
                 value: "Extendido",
                 key: "EXTENDED"
@@ -45,7 +49,7 @@ const dictionaries = {
         placeholderSelectLanguage: "Select language",
         placeholderSelectLayout: "Select layout",
         cancelButton: "Cancel",
-        selectLanguage: [
+        languageOptions: [
             {
                 value: "Spanish",
                 key: "ES-MX"
@@ -53,9 +57,13 @@ const dictionaries = {
             {
                 value: "English",
                 key: "EN-US"
+            },
+            {
+                value: "French",
+                key: "FR-FR"
             }
         ],
-        selectLayout: [
+        layoutOptions: [
             {
                 value: "Extended",
                 key: "EXTENDED"
@@ -71,6 +79,46 @@ const dictionaries = {
         simpleSucessMessage: "Tabs saved",
         simpleReopenTabsMessage: "Tabs opened",
         simpleDeleteTabsMessage: "Tabs deleted",
+    },
+    'FR-FR': {
+        openButtonCard: 'Ouvrir',
+        openButton: 'Réouvrir',
+        deleteButton: "Supprimer",
+        saveButton: "Sauvegarder",
+        optionsButton: "Paramètres",
+        placeholderSelectLanguage: "Sélectionner la langue",
+        placeholderSelectLayout: "Sélectionner la mise en page",
+        cancelButton: "Annuler",
+        languageOptions: [
+            {
+                value: "Espagnol",
+                key: "ES-MX"
+            },
+            {
+                value: "Anglais",
+                key: "EN-US"
+            },
+            {
+                value: "français",
+                key: "FR-FR"
+            }
+        ],
+        layoutOptions: [
+            {
+                value: "Étendu",
+                key: "EXTENDED"
+            },
+            {
+                value: "Simple",
+                key: "SIMPLE"
+            }
+        ],
+        simplesaveButton: "Sauvegarder les onglets",
+        simpleOpenButton: "Réouvrir les onglets",
+        simpleDeleteButton: "Supprimer les onglets",
+        simpleSucessMessage: "Les onglets ont été enregistrés",
+        simpleReopenTabsMessage: "Les onglets ont été réouverts",
+        simpleDeleteTabsMessage: "Les onglets ont été supprimés",
     }
 }
 

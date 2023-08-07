@@ -12,14 +12,14 @@ export const AppRouter = () => {
     const simpleRoutes = (
         <Route element={<SimpleMainLayout/>}>
             <Route path="/*" element={<SimpleHomeRouter/>}/>
-            <Route path="/options" element={<OptionsRouter/>}/>
+            <Route path="/options/*" element={<OptionsRouter/>}/>
         </Route>
     )
 
     const extendedRoutes = (
         <Route element={<MainLayout/>}>
             <Route path="/*" element={<HomeRouter/>}/>
-            <Route path="/options" element={<OptionsRouter/>}/>
+            <Route path="/options/*" element={<OptionsRouter/>}/>
         </Route>
     )
 

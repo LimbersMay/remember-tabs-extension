@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "ReTabs - Sauvegarder et restaurer vos onglets",
+    "description": "Titre de l'extension"
+  },
+  "extDescription": {
+    "message": "ReTabs sauvegarde vos onglets même si vous éteignez votre ordinateur afin de les restaurer ultérieurement",
+    "description": "Description de l'extension"
+  }
+}

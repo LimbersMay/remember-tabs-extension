@@ -1,11 +1,17 @@
 export class MokeLocalStorageService {
+
+    constructor() {
+        this.language = 'EN-US';
+        this.layout = 'EXTENDED';
+        this.tabs = [];
+    }
     
     setTabs( tabs ) {
-        return;
+        return this.tabs.push(tabs);
     }
 
     getTabsUrls() {
-        return new Promise(( resolve, reject ) => {
+        return new Promise(( resolve) => {
 
             const tabsUrls = [
                 {
@@ -24,20 +30,19 @@ export class MokeLocalStorageService {
         });
     }
 
-    createItem(name, value) {
-
+    getUserLanguage() {
+        return this.language;
     }
 
-    getItemBy(query) {
+    setUserLanguage(language) {
+        this.language = language;
+    }
 
-        return new Promise((resolve, reject) => {
-            switch (query) {
-                case 'language':
-                    return resolve('EN-US');
-                case 'layout':
-                    return resolve('SIMPLE');
-            }
-        })
+    getUserLayout() {
+        return this.layout;
+    }
 
+    setUserLayout(layout) {
+        this.layout = layout;
     }
 }
