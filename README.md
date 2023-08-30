@@ -36,7 +36,7 @@ npm install
 ```
 
 **By default**, the extension will use the ChromeLocalStorage class to save the tabs. However, the syntax in this class is only available
-in a Chrome extension, so you will need to switchxb to the ChromeMokeLocalStorage and MokeLocalTab classes to run the 
+in a Chrome extension, so you will need to switch to the ChromeMokeLocalStorage and MokeLocalTab classes to run the 
 extension in development mode.
 
 **You need to change it in the following files**:
