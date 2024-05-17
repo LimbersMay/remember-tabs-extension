@@ -40,8 +40,8 @@ in a Chrome extension, so you will need to switch to the ChromeMokeLocalStorage 
 extension in development mode.
 
 **You need to change it in the following files**:
-- src/store/rememberTabs/preferences/thunks.js
-- src/store/rememberTabs/tab/thunks.js
+- src/store/rememberTabs/preferences/thunks.ts
+- src/store/rememberTabs/tab/thunks.ts
 
 **The above steps are not required if you build the extension and load it in Chrome**.
 
