@@ -4,6 +4,7 @@ import {HomeRouter} from "../home/routes/HomeRouter";
 import {OptionsRouter} from "../options/routes/OptionsRouter.jsx";
 import {useCheckUser} from "../hooks/useCheckUser";
 import {MainLayout, SimpleMainLayout} from "../layouts";
+import {GenericLayout} from "../layouts/GenericLayout.tsx";
 
 export const AppRouter = () => {
 
@@ -17,7 +18,7 @@ export const AppRouter = () => {
     )
 
     const extendedRoutes = (
-        <Route element={<MainLayout/>}>
+        <Route element={<GenericLayout/>}>
             <Route path="/*" element={<HomeRouter/>}/>
             <Route path="/options/*" element={<OptionsRouter/>}/>
         </Route>
