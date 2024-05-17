@@ -1,12 +1,22 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {RootState} from "../../store.ts";
+
+interface initialState {
+    language: string,
+    layout: string,
+    checking: string
+}
+
+const initialState: initialState = {
+    language: 'EN-US',
+    layout: 'EXTENDED',
+    checking: 'checking'
+
+}
 
 export const preferencesSlice = createSlice({
     name: 'preferences',
-    initialState: {
-        language: 'EN-US',
-        layout: 'EXTENDED',
-        checking: 'checking'
-    },
+    initialState: initialState,
     reducers: {
         setLanguage: (state, action) => {
 
@@ -32,3 +42,4 @@ export const preferencesSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {setLanguage, setLayout, setChecking} = preferencesSlice.actions
+export const selectPreferences = (state: RootState) => state.preferences;
