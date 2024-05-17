@@ -23,6 +23,101 @@ export class MokeLocalStorageService {
                     title: "Google",
                     url: "Google.com",
                     id: 59386992
+                },
+                {
+                    title: "Facebook",
+                    url: "Facebook.com",
+                    id: 59386993
+                },
+                {
+                    title: "Twitter",
+                    url: "Twitter.com",
+                    id: 59386994
+                },
+                {
+                    title: "Instagram",
+                    url: "Instagram.com",
+                    id: 59386995
+                },
+                {
+                    title: "Youtube",
+                    url: "Youtube.com",
+                    id: 59386996
+                },
+                {
+                    title: "Linkedin",
+                    url: "Linkedin.com",
+                    id: 59386997
+                },
+                {
+                    title: "Github",
+                    url: "Github.com",
+                    id: 59386998
+                },
+                {
+                    title: "Stackoverflow",
+                    url: "Stackoverflow.com",
+                    id: 59386999
+                },
+                {
+                    title: "Reddit",
+                    url: "Reddit.com",
+                    id: 593869910
+                },
+                {
+                    title: "Wikipedia",
+                    url: "Wikipedia.com",
+                    id: 593869911
+                },
+                {
+                    title: "Amazon",
+                    url: "Amazon.com",
+                    id: 593869912
+                },
+                {
+                    title: "Ebay",
+                    url: "Ebay.com",
+                    id: 593869913
+                },
+                {
+                    title: "Walmart",
+                    url: "Walmart.com",
+                    id: 593869914
+                },
+                {
+                    title: "Aliexpress",
+                    url: "Aliexpress.com",
+                    id: 593869915
+                },
+                {
+                    title: "Netflix",
+                    url: "Netflix.com",
+                    id: 593869916
+                },
+                {
+                    title: "Hulu",
+                    url: "Hulu.com",
+                    id: 593869917
+                },
+                {
+                    title: "Disney+",
+                    url: "Disney+.com",
+                    id: 593869918
+                },
+                {
+                    title: "Spotify",
+                    url: "Spotify.com",
+                    id: 593869919
+                },
+                {
+                    title: "Apple Music",
+                    url: "AppleMusic.com",
+                    id: 593869920
+                },
+                {
+                    title: "Tidal",
+                    url: "Tidal.com",
+                    id: 593869921
                 }
             ];
 
