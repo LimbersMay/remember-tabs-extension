@@ -1,5 +1,3 @@
-
-import * as S from '../styled-components';
 import { Select } from "./Select";
 import {useContext} from "react";
 import { LanguageContext } from "../../context";
@@ -13,7 +11,7 @@ export const PreferencesContainer = () => {
     const {languageOptions, layoutOptions} = userDictionary;
 
     return (
-        <S.PreferencesContainer>
+        <div className="flex gap-[10px] items-center flex-col mt-[25px] mb-[20px]">
             <Select
                 options={ languageOptions }
                 selected={ language }
@@ -24,6 +22,6 @@ export const PreferencesContainer = () => {
                 selected={ layout }
                 name={ "layout" }
             />
-        </S.PreferencesContainer>
+        </div>
     )
 }

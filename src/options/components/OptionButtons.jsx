@@ -1,4 +1,3 @@
-import * as S from '../styled-components/index.js';
 import {useContext} from "react";
 import {LanguageContext} from "../../context";
 
@@ -8,22 +7,20 @@ export const OptionButtons = () => {
     const { saveButton, cancelButton } = userDictionary;
 
     return (
-        <S.ButtonsContainer>
-            <S.Button
-                background={'#2E7D32'}
-                hover={'#2a692d'}
+        <div className="flex gap-[15px] items-center justify-center flex-wrap">
+            <button
+                className="w-[130px] h-[25px] border-none rounded-[5px] text-white bg-[#2E7D32] hover:bg-[#2a692d] cursor-pointer"
                 type={"submit"}
             >
                 {saveButton}
-            </S.Button>
+            </button>
 
-            <S.Button
-                background={'#455A64'}
-                hover={'#37474F'}
+            <button
+                className="w-[130px] h-[25px] border-none rounded-[5px] text-white bg-[#455A64] hover:bg-[#37474F] cursor-pointer"
                 type={"reset"}
             >
                 {cancelButton}
-            </S.Button>
-        </S.ButtonsContainer>
+            </button>
+        </div>
     )
 }

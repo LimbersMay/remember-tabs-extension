@@ -1,17 +1,15 @@
-
-import * as S from '../styled-components/SimpleMainLayout.style.jsx';
 import {Outlet} from "react-router-dom";
 import {Header} from "../simpleHome/components/Header.jsx";
 
 export const SimpleMainLayout = ({ children }) => {
     return (
-        <S.SimpleMainLayout>
+        <div className="flex flex-col items-center justify-start bg-gray-100 w-[150px] h-[350px]">
 
             <Header />
 
             {children}
 
             <Outlet />
-        </S.SimpleMainLayout>
+        </div>
     )
 }

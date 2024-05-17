@@ -1,5 +1,3 @@
-
-import * as S  from '../styled-components/index.js';
 import {useContext, useState} from "react";
 import {LanguageContext} from "../../context";
 import {useNavigate} from "react-router-dom";
@@ -54,45 +52,41 @@ export const ButtonsContainer = () => {
     }
 
     return (
-        <S.ButtonsContainer>
-            <S.Button
-                background={ '#2E7D32' }
-                hoverColor={'#2a692d'}
+        <div className="flex mt-[10px] flex-col items-center">
+            <button
+                className="w-[120px] h-[50px] border-none m-[3px] bg-[#2E7D32] text-white rounded-[5px] hover:bg-[#2a692d]"
                 onClick={() => {handleSaveTabs(); handleSetSuccessMessage()}}
             >
                 {simplesaveButton}
-            </S.Button>
+            </button>
 
-            <S.Button
-                background={'#00695C'}
-                hoverColor={'#005a4f'}
+            <button
+                className="w-[120px] h-[50px] border-none m-[3px] bg-[#00695C] text-white rounded-[5px] hover:bg-[#005a4f]"
                 onClick={() => {handleOpenTabs(); handleSetOpenTabsMessage()}}
             >
                 {simpleOpenButton}
-            </S.Button>
+            </button>
 
-            <S.Button
-                background={'#C62828'}
-                hoverColor={'#b71c1c'}
+            <button
+                className="w-[120px] h-[50px] border-none m-[3px] bg-[#C62828] text-white rounded-[5px] hover:bg-[#B71C1C]"
                 onClick={() => {handleDeleteTabs(); handleSetDeleteTabsMessage()}}
             >
                 {simpleDeleteButton}
-            </S.Button>
+            </button>
 
-            <S.Button
-                background={'#455A64'}
-                hoverColor={'#37474F'}
+            <button
+                className="w-[120px] h-[50px] border-none m-[3px] bg-[#455A64] text-white rounded-[5px] hover:bg-[#37474F]"
                 onClick={ () => { history('/options');} }
             >
                 {optionsButton}
-            </S.Button>
+            </button>
 
-            <S.Message color={messageColor}>
+            <div className={`font-bold text-center text-[${messageColor}]`}>
                 <p>
                     {message}
                 </p>
-            </S.Message>
+            </div>
 
-        </S.ButtonsContainer>
+        </div>
     )
 }
