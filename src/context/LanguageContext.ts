@@ -1,4 +1,8 @@
 import {createContext} from "react";
-import {UserDictionary} from "../interfaces/UserDictionary.ts";
+import {UserDictionary} from "../interfaces/UserDictionary";
 
-export const LanguageContext = createContext<UserDictionary>(null);
+interface LanguageContextProps {
+    userDictionary: UserDictionary;
+}
+
+export const LanguageContext = createContext<LanguageContextProps>(null);
