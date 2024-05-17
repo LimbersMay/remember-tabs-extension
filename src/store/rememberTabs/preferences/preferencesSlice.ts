@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from "../../store.ts";
 
 interface initialState {
@@ -18,7 +18,7 @@ export const preferencesSlice = createSlice({
     name: 'preferences',
     initialState: initialState,
     reducers: {
-        setLanguage: (state, action) => {
+        setLanguage: (state, action: PayloadAction<string>) => {
 
             if (!action.payload) {
                 return state;
@@ -26,7 +26,7 @@ export const preferencesSlice = createSlice({
 
             state.language = action.payload;
         },
-        setLayout: (state, action) => {
+        setLayout: (state, action: PayloadAction<string>) => {
 
             if (!action.payload) {
                 return state;
@@ -34,7 +34,7 @@ export const preferencesSlice = createSlice({
 
             state.layout = action.payload;
         },
-        setChecking: (state, action) => {
+        setChecking: (state, action: PayloadAction<string>) => {
             state.checking = action.payload;
         }
     }
