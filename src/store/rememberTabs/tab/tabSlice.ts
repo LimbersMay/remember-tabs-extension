@@ -1,19 +1,26 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from "../../store.ts";
+import {Tab} from "../../../interfaces/Tab.ts";
+
+interface initialState {
+    tabs: Tab[];
+}
+
+const initialState: initialState = {
+    tabs: []
+};
 
 export const tabSlice = createSlice({
     name: 'tab',
-    initialState: {
-        tabs: []
-    },
+    initialState: initialState,
     reducers: {
-        setTabs: (state, action) => {
+        setTabs: (state, action: PayloadAction<Tab[]>) => {
             state.tabs = action.payload;
         },
         deleteTabs: (state) => {
             state.tabs = [];
         },
-        deleteTabById: (state, action) => {
+        deleteTabById: (state, action: PayloadAction<string>) => {
             state.tabs = state.tabs.filter(tab => tab.id !== action.payload);
         }
     }
