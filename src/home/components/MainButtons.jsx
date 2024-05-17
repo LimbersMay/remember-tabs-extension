@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import * as S from '../styled-components/index';
 import { useNavigate } from 'react-router-dom';
 import {LanguageContext} from "../../context";
 import {useDispatch} from "react-redux";
@@ -27,38 +26,31 @@ export const MainButtons = () => {
     }
 
     return (
-        <S.MainButtons>
-            <S.MainButton 
-                background={'#2E7D32'}
-                hoverColor={'#2a692d'}
-                onClick={ handleSaveTabs }
-            >
+        <div className="flex justify-around items-center bg-[#E8EAF6] w-full h-[50px]">
+            <button className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#2E7D32] hover:bg-[#2a692d] cursor-pointer" onClick={ handleSaveTabs }>
                 { saveButton }
-            </S.MainButton>
+            </button>
 
-            <S.MainButton 
-                background={'#00695C'}
-                hoverColor={'#005a4f'}
+            <button
+                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#00695C] hover:bg-[#005a4f] cursor-pointer"
                 onClick={ handleOpenAllTabs }
-                >
+            >
                 { openButton }
-            </S.MainButton>
+            </button>
 
-            <S.MainButton 
-                background={'#C62828'}
-                hoverColor={'#b71c1c'}
+            <button
+                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#C62828] hover:bg-[#b71c1c] cursor-pointer"
                 onClick={ handleDeleteAllTabs }
-                >
+            >
                 { deleteButton }
-            </S.MainButton>
+            </button>
 
-            <S.MainButton
-                background={'#455A64'}
-                hoverColor={'#37474F'}
+            <button
+                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#455A64] hover:bg-[#37474F] cursor-pointer"
                 onClick={ () => {    history('/options');} }
             >
                 { optionsButton }
-            </S.MainButton>
-        </S.MainButtons>
+            </button>
+        </div>
     )
 }
