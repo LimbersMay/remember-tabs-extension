@@ -1,10 +1,11 @@
-import {LanguageContext} from "./LanguageContext.jsx";
-import {useSelector} from "react-redux";
-import dictionaries from "../languages/languages.js";
+import {LanguageContext} from "./LanguageContext";
+import dictionaries from "../languages/languages";
+import {useAppSelector} from "../store/hooks";
+import {selectPreferences} from "../store/rememberTabs";
 
 export const LanguageProvider = ({ children }) => {
 
-    const { language } = useSelector(state => state.preferences);
+    const { language } = useAppSelector(selectPreferences);
     const userDictionary = dictionaries[language] ?? dictionaries['EN-US'];
 
     return (
