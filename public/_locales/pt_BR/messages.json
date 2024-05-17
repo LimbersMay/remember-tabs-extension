@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "ReTabs - Salve e restaure suas guias",
+    "description": "Título da extensão"
+  },
+  "extDescription": {
+    "message": "ReTabs salva suas guias mesmo que você desligue o computador e depois pode restaurá-las.",
+    "description": "Descrição da extensão"
+  }
+}
