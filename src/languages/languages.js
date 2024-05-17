@@ -21,6 +21,10 @@ const dictionaries = {
             {
                 value: "Francés",
                 key: "FR-FR"
+            },
+            {
+                value: "Portugués",
+                key: "PT-BR"
             }
         ],
         layoutOptions: [
@@ -61,6 +65,10 @@ const dictionaries = {
             {
                 value: "French",
                 key: "FR-FR"
+            },
+            {
+                value: "Portuguese",
+                key: "PT-BR"
             }
         ],
         layoutOptions: [
@@ -101,6 +109,10 @@ const dictionaries = {
             {
                 value: "français",
                 key: "FR-FR"
+            },
+            {
+                value: "Portugais",
+                key: "PT-BR"
             }
         ],
         layoutOptions: [
@@ -119,6 +131,51 @@ const dictionaries = {
         simpleSucessMessage: "Les onglets ont été enregistrés",
         simpleReopenTabsMessage: "Les onglets ont été réouverts",
         simpleDeleteTabsMessage: "Les onglets ont été supprimés",
+    },
+    // Portuguese
+    'PT-BR': {
+        openButtonCard: 'Abrir',
+        openButton: 'Abrir',
+        deleteButton: "Eliminar",
+        saveButton: "Salvar",
+        optionsButton: "Opções",
+        placeholderSelectLanguage: "Selecione o idioma",
+        placeholderSelectLayout: "Selecione o layout",
+        cancelButton: "Cancelar",
+        languageOptions: [
+            {
+                value: "Espanhol",
+                key: "ES-MX"
+            },
+            {
+                value: "Inglês",
+                key: "EN-US"
+            },
+            {
+                value: "Francês",
+                key: "FR-FR"
+            },
+            {
+                value: "Português",
+                key: "PT-BR"
+            }
+        ],
+        layoutOptions: [
+            {
+                value: "Estendido",
+                key: "EXTENDED"
+            },
+            {
+                value: "Simples",
+                key: "SIMPLE"
+            }
+        ],
+        simplesaveButton: "Salvar abas",
+        simpleOpenButton: "Reabrir abas",
+        simpleDeleteButton: "Eliminar abas",
+        simpleSucessMessage: "Abas salvas",
+        simpleReopenTabsMessage: "Abas reabertas",
+        simpleDeleteTabsMessage: "Abas apagadas",
     }
 }
 
