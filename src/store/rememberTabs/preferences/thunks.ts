@@ -1,7 +1,7 @@
-import {ChromeLocalStorageService} from "../../../home/services/index.js";
-import {setLanguage, setLayout} from "./preferencesSlice.js";
+import {ChromeLocalStorageService, MokeLocalStorageService} from "../../../home/services/index.js";
+import {setLanguage, setLayout} from "./preferencesSlice.ts";
 
-const userService = new ChromeLocalStorageService();
+const userService = new MokeLocalStorageService();
 
 export const startLoadingLanguage = () => {
     return async(dispatch) => {

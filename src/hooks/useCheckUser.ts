@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {setChecking, startLoadingLanguage, startLoadingLayout, startLoadingTabs} from "../store/rememberTabs";
+import {setChecking, startLoadingLanguage, startLoadingLayout, startLoadingTabs} from "../store/rememberTabs/index.js";
 
 export const useCheckUser = () => {
     const dispatch = useDispatch();
