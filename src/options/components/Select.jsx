@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 export const Select = ({ selected, options, name }) => {
 
     return (
-        <div className="flex flex-row justify-evenly w-full">
+        <div className="flex w-full flex-row justify-evenly">
             <select
                 name={name}
                 className="border-none outline-none rounded-[5px] h-[35px] w-[80%] p-[5px] bg-[#d7d9e6]"

@@ -8,7 +8,7 @@ export const TabItems = () => {
     const { tabs } = useSelector(state => state.tabs)
 
     return (
-        <div className="w-full h-[250px] overflow-y-scroll gap-5">
+        <div className="w-full gap-5 overflow-y-scroll h-[250px]">
             <TransitionGroup>
                 {
                     tabs.map(tab => (

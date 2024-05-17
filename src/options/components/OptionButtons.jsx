@@ -7,7 +7,7 @@ export const OptionButtons = () => {
     const { saveButton, cancelButton } = userDictionary;
 
     return (
-        <div className="flex gap-[15px] items-center justify-center flex-wrap">
+        <div className="flex flex-wrap items-center justify-center gap-[15px]">
             <button
                 className="w-[130px] h-[25px] border-none rounded-[5px] text-white bg-[#2E7D32] hover:bg-[#2a692d] cursor-pointer"
                 type={"submit"}

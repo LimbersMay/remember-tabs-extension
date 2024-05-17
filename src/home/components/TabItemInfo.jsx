@@ -1,11 +1,11 @@
 export const TabItemInfo = ({ tab }) => {
     return (
-        <div className="flex flex-col w-[200px] h-[57px] pl-2">
-            <h4 className="text-[17px] m-0 min-h-[23px] truncate whitespace-nowrap overflow-hidden text-ellipsis font-bold">
+        <div className="flex flex-col pl-2 w-[200px] h-[57px]">
+            <h4 className="m-0 overflow-hidden truncate text-ellipsis whitespace-nowrap font-bold text-[17px] min-h-[23px]">
                 {tab.title}
             </h4>
 
-            <small className="italic text-[11px] min-h-[15px] max-h-[30px] truncate whitespace-nowrap overflow-hidden text-ellipsis text-wrap">
+            <small className="overflow-hidden truncate text-ellipsis whitespace-nowrap italic text-[11px] min-h-[15px] max-h-[30px] text-wrap">
                 {tab.url}
             </small>
         </div>

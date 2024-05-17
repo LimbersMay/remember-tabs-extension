@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {LanguageContext} from "../../context";
 import {useDispatch} from "react-redux";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
+import {FooterButton} from "../../themes/default/home/FooterButton.jsx";
 
 export const MainButtons = () => {
 
@@ -27,30 +28,29 @@ export const MainButtons = () => {
 
     return (
         <div className="flex justify-around items-center bg-[#E8EAF6] w-full h-[50px]">
-            <button className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#2E7D32] hover:bg-[#2a692d] cursor-pointer" onClick={ handleSaveTabs }>
-                { saveButton }
-            </button>
+            <FooterButton
+                appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
+                onClick={ handleSaveTabs }
+                value={ saveButton }
+            />
 
-            <button
-                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#00695C] hover:bg-[#005a4f] cursor-pointer"
+            <FooterButton
+                appendClass="bg-[#00695C] hover:bg-[#005a4f]"
                 onClick={ handleOpenAllTabs }
-            >
-                { openButton }
-            </button>
+                value={ openButton }
+            />
 
-            <button
-                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#C62828] hover:bg-[#b71c1c] cursor-pointer"
+            <FooterButton
+                appendClass="bg-[#C62828] hover:bg-[#b71c1c]"
                 onClick={ handleDeleteAllTabs }
-            >
-                { deleteButton }
-            </button>
+                value={ deleteButton }
+            />
 
-            <button
-                className="text-white border-none rounded-[5px] font-bold min-w-[70px] max-w-[90px] p-[4px] min-h-[35px] bg-[#455A64] hover:bg-[#37474F] cursor-pointer"
+            <FooterButton
+                appendClass="bg-[#455A64] hover:bg-[#37474F]"
                 onClick={ () => {    history('/options');} }
-            >
-                { optionsButton }
-            </button>
+                value={ optionsButton }
+            />
         </div>
     )
 }

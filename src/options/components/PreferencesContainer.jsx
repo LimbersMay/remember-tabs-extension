@@ -11,7 +11,7 @@ export const PreferencesContainer = () => {
     const {languageOptions, layoutOptions} = userDictionary;
 
     return (
-        <div className="flex gap-[10px] items-center flex-col mt-[25px] mb-[20px]">
+        <div className="flex flex-col items-center gap-[10px] mt-[25px] mb-[20px]">
             <Select
                 options={ languageOptions }
                 selected={ language }

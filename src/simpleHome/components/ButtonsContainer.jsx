@@ -1,8 +1,9 @@
 import {useContext, useState} from "react";
-import {LanguageContext} from "../../context";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
+import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs/index.js";
+import {FooterButton} from "../../themes/default/options/FooterButton.jsx";
 
 export const ButtonsContainer = () => {
 
@@ -34,7 +35,7 @@ export const ButtonsContainer = () => {
     const history = useNavigate();
 
     const [ message, setMessage ] = useState(null);
-    const [ messageColor, setMessageColor ] = useState('black');
+    const [ messageColor, setMessageColor ] = useState('');
 
     const handleSetSuccessMessage = () => {
         setMessage(simpleSucessMessage);
@@ -53,35 +54,31 @@ export const ButtonsContainer = () => {
 
     return (
         <div className="flex mt-[10px] flex-col items-center">
-            <button
-                className="w-[120px] h-[50px] border-none m-[3px] bg-[#2E7D32] text-white rounded-[5px] hover:bg-[#2a692d]"
+            <FooterButton
+                appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
                 onClick={() => {handleSaveTabs(); handleSetSuccessMessage()}}
-            >
-                {simplesaveButton}
-            </button>
+                value={simplesaveButton}
+            />
 
-            <button
-                className="w-[120px] h-[50px] border-none m-[3px] bg-[#00695C] text-white rounded-[5px] hover:bg-[#005a4f]"
+            <FooterButton
+                appendClass="bg-[#00695C] hover:bg-[#005a4f]"
                 onClick={() => {handleOpenTabs(); handleSetOpenTabsMessage()}}
-            >
-                {simpleOpenButton}
-            </button>
+                value={simpleOpenButton}
+            />
 
-            <button
-                className="w-[120px] h-[50px] border-none m-[3px] bg-[#C62828] text-white rounded-[5px] hover:bg-[#B71C1C]"
+            <FooterButton
+                appendClass="bg-[#C62828] hover:bg-[#B71C1C]"
                 onClick={() => {handleDeleteTabs(); handleSetDeleteTabsMessage()}}
-            >
-                {simpleDeleteButton}
-            </button>
+                value={simpleDeleteButton}
+            />
 
-            <button
-                className="w-[120px] h-[50px] border-none m-[3px] bg-[#455A64] text-white rounded-[5px] hover:bg-[#37474F]"
+            <FooterButton
+                appendClass="bg-[#455A64] hover:bg-[#37474F]"
                 onClick={ () => { history('/options');} }
-            >
-                {optionsButton}
-            </button>
+                value={optionsButton}
+            />
 
-            <div className={`font-bold text-center text-[${messageColor}]`}>
+            <div className="font-bold text-center" style={{color: messageColor}}>
                 <p>
                     {message}
                 </p>
