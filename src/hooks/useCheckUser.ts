@@ -1,11 +1,17 @@
-import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {setChecking, startLoadingLanguage, startLoadingLayout, startLoadingTabs} from "../store/rememberTabs/index.js";
+import {
+    selectPreferences,
+    setChecking,
+    startLoadingLanguage,
+    startLoadingLayout,
+    startLoadingTabs
+} from "../store/rememberTabs";
+import {useAppDispatch, useAppSelector} from "../store/hooks.ts";
 
 export const useCheckUser = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const { checking, layout } = useSelector(state => state.preferences);
+    const { checking, layout } = useAppSelector(selectPreferences);
 
     useEffect(() => {
         dispatch(startLoadingLayout());
