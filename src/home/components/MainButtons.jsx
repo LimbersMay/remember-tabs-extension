@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {LanguageContext} from "../../context";
 import {useDispatch} from "react-redux";
+import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
-import {FooterButton} from "../../themes/default/home/FooterButton.jsx";
+import {FooterButton} from "../../themes/default";
 
 export const MainButtons = () => {
 

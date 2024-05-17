@@ -3,7 +3,8 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs/index.js";
-import {FooterButton} from "../../themes/default/options/FooterButton.jsx";
+import {ActionButton} from "../../themes/default";
+
 
 export const ButtonsContainer = () => {
 
@@ -54,25 +55,25 @@ export const ButtonsContainer = () => {
 
     return (
         <div className="flex mt-[10px] flex-col items-center">
-            <FooterButton
+            <ActionButton
                 appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
                 onClick={() => {handleSaveTabs(); handleSetSuccessMessage()}}
                 value={simplesaveButton}
             />
 
-            <FooterButton
+            <ActionButton
                 appendClass="bg-[#00695C] hover:bg-[#005a4f]"
                 onClick={() => {handleOpenTabs(); handleSetOpenTabsMessage()}}
                 value={simpleOpenButton}
             />
 
-            <FooterButton
+            <ActionButton
                 appendClass="bg-[#C62828] hover:bg-[#B71C1C]"
                 onClick={() => {handleDeleteTabs(); handleSetDeleteTabsMessage()}}
                 value={simpleDeleteButton}
             />
 
-            <FooterButton
+            <ActionButton
                 appendClass="bg-[#455A64] hover:bg-[#37474F]"
                 onClick={ () => { history('/options');} }
                 value={optionsButton}
