@@ -1,11 +1,9 @@
-import * as S from '../styled-components';
-
 export const Header = () => {
     return (
-        <S.Header>
-            <S.Title>
+        <div className="bg-[#006064] w-full flex h-[50px] justify-center items-center">
+            <h4 className="text-white font-bold text-[20px]">
                 RememberTabs
-            </S.Title>
-        </S.Header>
+            </h4>
+        </div>
     )
 }
