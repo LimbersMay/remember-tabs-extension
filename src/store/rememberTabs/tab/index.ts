@@ -1,2 +1,2 @@
 export * from "./thunks";
-export * from './tabSlice';
+export * from './tabSlice.ts';

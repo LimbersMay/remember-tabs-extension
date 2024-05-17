@@ -1,2 +1,2 @@
-export * from "./preferencesSlice.js";
-export * from "./thunks";
+export * from "./preferencesSlice.ts";
+export * from "./thunks.ts";
