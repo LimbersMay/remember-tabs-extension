@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {RootState} from "../../store.ts";
 
 export const tabSlice = createSlice({
     name: 'tab',
@@ -21,3 +22,4 @@ export const tabSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { setTabs, deleteTabs, deleteTabById } = tabSlice.actions;
+export const SelectTabs = (state: RootState) => state.tabs;
