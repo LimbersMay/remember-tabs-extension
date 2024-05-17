@@ -1,5 +1,6 @@
+import {UserDictionary} from "../interfaces/UserDictionary.ts";
 
-const dictionaries = {
+const dictionaries: Record<string, UserDictionary> = {
     'ES-MX': {
         openButtonCard: 'Abrir',
         openButton: 'Abrir',
