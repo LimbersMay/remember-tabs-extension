@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import {useDispatch} from "react-redux";
-
-import * as S from "../styled-components";
 import {LanguageContext} from "../../context";
 import {startDeleteTab, startOpenTab} from "../../store/rememberTabs";
 
@@ -22,27 +20,23 @@ export const TabItemButtons = ({ tab }) => {
     }
 
     return (
-        <S.TabItemButtons>
+        <div className="flex flex-col items-center justify-center w-[100px] h-[50px] gap-[5px]">
             
-            <S.TabItemButton
-                background={'#00695C'}
-                hover={'#005a4f'}
-
+            <button
+                className="w-[80%] text-[14px] h-[30px] text-white rounded-[4px] bg-[#00695C] hover:bg-[#005a4f]"
                 onClick={ handleOpenTab }
             >
                 { openButtonCard }
-            </S.TabItemButton>
+            </button>
 
-            <S.TabItemButton
-                background={'#C62828'}
-                hover={'#b71c1c'}
-
+            <button
+                className="w-[80%] text-[14px] h-[30px] text-white rounded-[4px] bg-[#C62828] hover:bg-[#b71c1c]"
                 onClick={ handleDeleteTab }
             >
                 { deleteButton }
-            </S.TabItemButton>
+            </button>
 
-        </S.TabItemButtons>
+        </div>
     )
 }
 
