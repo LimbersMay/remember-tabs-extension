@@ -1,14 +1,14 @@
 import {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
 import {ActionButton} from "../../themes/default";
+import {useAppDispatch} from "../../store/hooks.ts";
 
 
 export const ButtonsContainer = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const { userDictionary } = useContext(LanguageContext);
     const {
