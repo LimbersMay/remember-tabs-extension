@@ -1,6 +1,8 @@
+import {Tab} from "../../interfaces/Tab.ts";
+
 export class ChromeLocalStorageService {
     
-    setTabs( tabs ) {
+    setTabs( tabs: Tab[] ): Promise<void> {
         return new Promise(( resolve, reject ) => {
             try {
                 chrome.storage.sync.set({"tabs": JSON.stringify(tabs)}, function() {});
@@ -11,7 +13,7 @@ export class ChromeLocalStorageService {
         });
     }
 
-    getTabsUrls() {
+    getTabsUrls(): Promise<Tab[]> {
         return new Promise(( resolve ) => {
             chrome.storage.sync.get(["tabs"], function( result ) {
 
@@ -24,12 +26,12 @@ export class ChromeLocalStorageService {
         });
     }
 
-    createItem(itemName, value) {
+    async createItem(itemName: string, value: any) {
 
         const query = {};
         query[itemName] = value;
 
-        chrome.storage.sync.set(query);
+        await chrome.storage.sync.set(query);
     }
 
     getItemBy(query) {
@@ -46,10 +48,10 @@ export class ChromeLocalStorageService {
         })
     }
 
-    deleteItemById(tabId) {
-        this.getTabsUrls().then( tabs => {
+    deleteItemById(tabId: number) {
+        this.getTabsUrls().then( async (tabs) => {
             const newTabs = tabs.filter(tab => tab.id !== tabId);
-            this.setTabs(newTabs);
+            await this.setTabs(newTabs);
         });
     }
 
