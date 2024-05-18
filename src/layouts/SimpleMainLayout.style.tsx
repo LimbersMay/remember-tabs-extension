@@ -1,7 +1,8 @@
 import {Outlet} from "react-router-dom";
 import {Header} from "../simpleHome/components/Header";
+import {ReactNode} from "react";
 
-export const SimpleMainLayout = ({ children }) => {
+export const SimpleMainLayout = ({ children }: { children: ReactNode }) => {
     return (
         <div className="flex flex-col items-center justify-start bg-gray-100 w-[150px] h-[350px]">
 
