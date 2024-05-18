@@ -1,4 +1,10 @@
+import {Tab} from "../../interfaces/Tab.ts";
+
 export class MokeLocalStorageService {
+
+    public language: string;
+    public layout: string;
+    public tabs: Tab[];
 
     constructor() {
         this.language = 'EN-US';
@@ -6,14 +12,13 @@ export class MokeLocalStorageService {
         this.tabs = [];
     }
     
-    setTabs( tabs ) {
-        return this.tabs.push(tabs);
+    setTabs( tabs: Tab[] ) {
+        this.tabs = tabs;
     }
 
-    getTabsUrls() {
+    getTabsUrls(): Promise<Tab[]> {
         return new Promise(( resolve) => {
-
-            const tabsUrls = [
+            const tabsUrls: Tab[] = [
                 {
                     title: 'Write the asynchronous function inside the useEffect',
                     url: 'https://www.youtube.com/watch?v=4N1bifzQEhI&list=RDwGF7PswOENQ&index=13',
@@ -129,7 +134,7 @@ export class MokeLocalStorageService {
         return this.language;
     }
 
-    setUserLanguage(language) {
+    setUserLanguage(language: string) {
         this.language = language;
     }
 
@@ -137,7 +142,7 @@ export class MokeLocalStorageService {
         return this.layout;
     }
 
-    setUserLayout(layout) {
+    setUserLayout(layout: string) {
         this.layout = layout;
     }
 }

@@ -1,17 +1,18 @@
+import {Tab} from "../../interfaces/Tab.ts";
 
 export class ChromeTabService {
 
-    openTabs(urls = []) {
-        urls.forEach(url => {
-            chrome.tabs.create({
+    openTabs(urls: string[] = []) {
+        urls.forEach(async (url) => {
+            await chrome.tabs.create({
                 url,
                 active: false
             })
         });
     }
 
-    getTabsUrls() {
-        return new Promise((resolve, reject) => {
+    getTabsUrls(): Promise<Tab[]> {
+        return new Promise((resolve) => {
             chrome.tabs.query({}, (tabs) => {
                 
                 const urls = tabs.map(tab => ({
