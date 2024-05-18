@@ -1,11 +1,12 @@
 import { TabItem } from "./TabItem";
 import { TransitionGroup } from "react-transition-group";
 import { TransitionItem } from "./TransitionItem";
-import {useSelector} from "react-redux";
+import {useAppSelector} from "../../store/hooks.ts";
+import {SelectTabs} from "../../store/rememberTabs";
 
 export const TabItems = () => {
 
-    const { tabs } = useSelector(state => state.tabs)
+    const { tabs } = useAppSelector(SelectTabs);
 
     return (
         <div className="w-full gap-5 overflow-y-scroll h-[250px]">
