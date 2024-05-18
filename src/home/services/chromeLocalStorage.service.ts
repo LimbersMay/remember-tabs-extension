@@ -1,7 +1,7 @@
 import {Tab} from "../../interfaces/Tab.ts";
 
 export class ChromeLocalStorageService {
-    
+
     setTabs( tabs: Tab[] ): Promise<void> {
         return new Promise(( resolve, reject ) => {
             try {
@@ -26,13 +26,22 @@ export class ChromeLocalStorageService {
         });
     }
 
+    async createItem(itemName: string, value: any) {
+
+        const query = {};
+        // @ts-ignore
+        query[itemName] = value;
+
+        await chrome.storage.sync.set(query);
+    }
+
     getItemBy(query: string): Promise<string> {
 
-        return new Promise(( resolve, reject ) => {
+        return new Promise(( resolve ) => {
             chrome.storage.sync.get([query], function( result ) {
 
                 if ( !result[query]) {
-                    return reject("No item found");
+                    return resolve("");
                 }
 
                 resolve(result[query]);
@@ -51,15 +60,15 @@ export class ChromeLocalStorageService {
         return this.getItemBy("language");
     }
 
-    async setUserLanguage(language: string) {
-        await chrome.storage.sync.set({"language": language});
+    setUserLanguage(language: string) {
+        this.createItem("language", language);
     }
 
     getUserLayout() {
         return this.getItemBy("layout");
     }
 
-    async setUserLayout(layout: string) {
-        await chrome.storage.sync.set({"layout": layout});
+    setUserLayout(layout: string) {
+        this.createItem("layout", layout);
     }
 }
