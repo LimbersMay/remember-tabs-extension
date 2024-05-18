@@ -26,21 +26,13 @@ export class ChromeLocalStorageService {
         });
     }
 
-    async createItem(itemName: string, value: any) {
+    getItemBy(query: string): Promise<string> {
 
-        const query = {};
-        query[itemName] = value;
-
-        await chrome.storage.sync.set(query);
-    }
-
-    getItemBy(query) {
-
-        return new Promise(( resolve ) => {
+        return new Promise(( resolve, reject ) => {
             chrome.storage.sync.get([query], function( result ) {
 
                 if ( !result[query]) {
-                    return resolve(null);
+                    return reject("No item found");
                 }
 
                 resolve(result[query]);
@@ -59,15 +51,15 @@ export class ChromeLocalStorageService {
         return this.getItemBy("language");
     }
 
-    setUserLanguage(language: string) {
-        this.createItem("language", language);
+    async setUserLanguage(language: string) {
+        await chrome.storage.sync.set({"language": language});
     }
 
     getUserLayout() {
         return this.getItemBy("layout");
     }
 
-    setUserLayout(layout: string) {
-        this.createItem("layout", layout);
+    async setUserLayout(layout: string) {
+        await chrome.storage.sync.set({"layout": layout});
     }
 }
