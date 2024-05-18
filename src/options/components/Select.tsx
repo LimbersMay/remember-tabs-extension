@@ -1,6 +1,13 @@
 import { v4 as uuid } from 'uuid';
+import {LanguageOptions} from "../../interfaces/UserDictionary.ts";
 
-export const Select = ({ selected, options, name }) => {
+interface SelectProps {
+    selected: string,
+    options: LanguageOptions[]
+    name: string
+}
+
+export const Select = ({ selected, options, name }: SelectProps) => {
 
     return (
         <div className="flex w-full flex-row justify-evenly">
