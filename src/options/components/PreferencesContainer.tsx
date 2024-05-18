@@ -1,11 +1,12 @@
-import { Select } from "./Select";
 import {useContext} from "react";
+import { Select } from "./Select";
 import { LanguageContext } from "../../context";
-import {useSelector} from "react-redux";
+import {useAppSelector} from "../../store/hooks.ts";
+import {SelectPreferences} from "../../store/rememberTabs";
 
 export const PreferencesContainer = () => {
 
-    const { language, layout } = useSelector(state => state.preferences);
+    const { language, layout } = useAppSelector(SelectPreferences);
 
     const { userDictionary } = useContext(LanguageContext);
     const {languageOptions, layoutOptions} = userDictionary;
