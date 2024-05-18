@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import {useDispatch} from "react-redux";
 import {LanguageContext} from "../../context";
 import {startDeleteTab, startOpenTab} from "../../store/rememberTabs";
+import {useAppDispatch} from "../../store/hooks.ts";
 
 export const TabItemButtons = ({ tab }) => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     // Obtenemos los textos del idioma del cliente
     const { userDictionary } = useContext(LanguageContext);
