@@ -59,7 +59,7 @@ export class ChromeLocalStorageService {
         return this.getItemBy("language");
     }
 
-    setUserLanguage(language) {
+    setUserLanguage(language: string) {
         this.createItem("language", language);
     }
 
@@ -67,7 +67,7 @@ export class ChromeLocalStorageService {
         return this.getItemBy("layout");
     }
 
-    setUserLayout(layout) {
+    setUserLayout(layout: string) {
         this.createItem("layout", layout);
     }
 }

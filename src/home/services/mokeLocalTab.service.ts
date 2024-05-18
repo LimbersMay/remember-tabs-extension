@@ -1,13 +1,14 @@
+import {Tab} from "../../interfaces/Tab.ts";
 
 export class MokeLocalTabService {
 
-    openTabs(urls = []) {
+    openTabs(urls: string[] = []) {
         urls.forEach(url => {
             console.log("Opening: ", url)
         });
     }
 
-    getTabsUrls() {
+    getTabsUrls(): Tab[] {
         return [
             {
                 title: 'Facebook',
