@@ -10,14 +10,14 @@ export const AppRouter = () => {
     const {checking: status, layout} = useCheckUser();
 
     const simpleRoutes = (
-        <Route element={<SimpleMainLayout/>}>
+        <Route element={<SimpleMainLayout children={null}/>}>
             <Route path="/*" element={<SimpleHomeRouter/>}/>
             <Route path="/options/*" element={<OptionsRouter/>}/>
         </Route>
     )
 
     const extendedRoutes = (
-        <Route element={<MainLayout/>}>
+        <Route element={<MainLayout children={null}/>}>
             <Route path="/*" element={<HomeRouter/>}/>
             <Route path="/options/*" element={<OptionsRouter/>}/>
         </Route>
