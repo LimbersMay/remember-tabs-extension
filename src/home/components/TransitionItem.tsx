@@ -1,8 +1,12 @@
-import { useRef } from 'react';
+import {ReactNode, useRef} from 'react';
 
 import { CSSTransition } from "react-transition-group";
 
-export const TransitionItem = ({ children, ...props}) => {
+interface TransitionItemProps {
+    children: ReactNode;
+}
+
+export const TransitionItem = ({ children, ...props}: TransitionItemProps) => {
 
     const nodeRef = useRef(null);
 
