@@ -1,4 +1,4 @@
 
 export * from './Header.jsx';
-export * from './MainButtons.jsx';
+export * from './MainButtons.tsx';
 export * from './TabItems.jsx';

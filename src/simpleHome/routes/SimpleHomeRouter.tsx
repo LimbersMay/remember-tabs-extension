@@ -1,5 +1,5 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import {SimpleHomeApp} from "../SimpleHomeApp.jsx";
+import {SimpleHomeApp} from "../SimpleHomeApp";
 
 export const SimpleHomeRouter = () => {
     return (

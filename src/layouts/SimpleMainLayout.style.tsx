@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import {Header} from "../simpleHome/components/Header.jsx";
+import {Header} from "../simpleHome/components/Header";
 
 export const SimpleMainLayout = ({ children }) => {
     return (

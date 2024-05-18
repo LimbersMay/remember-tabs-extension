@@ -1,4 +1,4 @@
-import {TabItems, MainButtons} from './components/index.js';
+import {TabItems, MainButtons} from './components';
 
 export const HomeApp = () => {
 

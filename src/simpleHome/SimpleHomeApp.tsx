@@ -1,4 +1,4 @@
-import {ButtonsContainer} from "./components/ButtonsContainer.jsx";
+import {ButtonsContainer} from "./components/ButtonsContainer";
 
 export const SimpleHomeApp = () => {
     return (
