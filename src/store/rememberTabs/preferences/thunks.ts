@@ -1,10 +1,11 @@
-import {ChromeLocalStorageService, MokeLocalStorageService} from "../../../home/services/index.js";
+import {ChromeLocalStorageService} from "../../../home/services";
 import {setLanguage, setLayout} from "./preferencesSlice.ts";
+import {AppDispatch} from "../../store.ts";
 
-const userService = new MokeLocalStorageService();
+const userService = new ChromeLocalStorageService();
 
 export const startLoadingLanguage = () => {
-    return async(dispatch) => {
+    return async(dispatch: AppDispatch) => {
         // async code here
         const language = await userService.getUserLanguage();
 
@@ -14,7 +15,7 @@ export const startLoadingLanguage = () => {
 }
 
 export const startLoadingLayout = () => {
-    return async(dispatch) => {
+    return async(dispatch: AppDispatch) => {
         // async code here
         const layout = await userService.getUserLayout();
 
@@ -23,8 +24,8 @@ export const startLoadingLayout = () => {
     }
 }
 
-export const startSaveLanguage = (language) => {
-    return async(dispatch) => {
+export const startSaveLanguage = (language: string) => {
+    return async(dispatch: AppDispatch) => {
         // async code here
         await userService.setUserLanguage(language);
 
@@ -33,8 +34,8 @@ export const startSaveLanguage = (language) => {
     }
 }
 
-export const startSaveLayout = (layout) => {
-    return async(dispatch) => {
+export const startSaveLayout = (layout: string) => {
+    return async(dispatch: AppDispatch) => {
         // async code here
         await userService.setUserLayout(layout);
 
