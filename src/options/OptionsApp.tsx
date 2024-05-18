@@ -1,12 +1,12 @@
 import {PreferencesContainer} from "./components/PreferencesContainer";
 import {OptionButtons} from "./components/OptionButtons";
 import {useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import {startSaveLanguage, startSaveLayout} from "../store/rememberTabs";
+import {useAppDispatch} from "../store/hooks.ts";
 
 export const OptionsApp = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const history = useNavigate();
     const onSubmit = (event) => {
