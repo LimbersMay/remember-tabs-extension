@@ -42,4 +42,4 @@ export const preferencesSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {setLanguage, setLayout, setChecking} = preferencesSlice.actions
-export const selectPreferences = (state: RootState) => state.preferences;
+export const SelectPreferences = (state: RootState) => state.preferences;
