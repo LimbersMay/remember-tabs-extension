@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {
-    selectPreferences,
+    SelectPreferences,
     setChecking,
     startLoadingLanguage,
     startLoadingLayout,
@@ -11,7 +11,7 @@ import {useAppDispatch, useAppSelector} from "../store/hooks.ts";
 export const useCheckUser = () => {
     const dispatch = useAppDispatch();
 
-    const { checking, layout } = useAppSelector(selectPreferences);
+    const { checking, layout } = useAppSelector(SelectPreferences);
 
     useEffect(() => {
         dispatch(startLoadingLayout());
