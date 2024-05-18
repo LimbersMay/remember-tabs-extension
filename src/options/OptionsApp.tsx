@@ -3,13 +3,14 @@ import {OptionButtons} from "./components/OptionButtons";
 import {useNavigate} from "react-router-dom";
 import {startSaveLanguage, startSaveLayout} from "../store/rememberTabs";
 import {useAppDispatch} from "../store/hooks.ts";
+import {FormEvent} from "react";
 
 export const OptionsApp = () => {
 
     const dispatch = useAppDispatch();
 
     const history = useNavigate();
-    const onSubmit = (event) => {
+    const onSubmit = (event: FormEvent) => {
         event.preventDefault();
 
         const formLanguage = event.target[0].value;
@@ -21,7 +22,7 @@ export const OptionsApp = () => {
         history("/")
     }
 
-    const onReset = (event) => {
+    const onReset = (event: FormEvent) => {
         event.preventDefault();
 
         history("/")
