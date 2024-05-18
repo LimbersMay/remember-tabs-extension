@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useDispatch} from "react-redux";
 import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
 import {FooterButton} from "../../themes/default";
+import {useAppDispatch} from "../../store/hooks.js";
 
 export const MainButtons = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const { userDictionary } = useContext(LanguageContext);
     const { saveButton, openButton, deleteButton, optionsButton } = userDictionary;
