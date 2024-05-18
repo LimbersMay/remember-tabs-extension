@@ -1,4 +1,4 @@
-interface LanguageOptions {
+export interface LanguageOptions {
     value: string;
     key: string;
 }
