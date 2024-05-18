@@ -1,23 +1,22 @@
 import {
     ChromeLocalStorageService,
     ChromeTabService,
-    MokeLocalStorageService,
-    MokeLocalTabService
-} from "../../../home/services/index.js";
-import {deleteTabById, deleteTabs, setTabs} from "./tabSlice.js";
+} from "../../../home/services";
+import {deleteTabById, deleteTabs, setTabs} from "./tabSlice";
+import {AppDispatch, RootState} from "../../store";
 
-const localStorageService = new MokeLocalStorageService();
-const tabsService = new MokeLocalTabService();
+const localStorageService = new ChromeLocalStorageService();
+const tabsService = new ChromeTabService();
 
 export const startLoadingTabs = () => {
-    return async(dispatch) => {
+    return async(dispatch: AppDispatch) => {
         const tabs = await localStorageService.getTabsUrls();
         dispatch(setTabs(tabs));
     }
 }
 
 export const startSaveTabs = () => {
-    return async(dispatch) => {
+    return async(dispatch: AppDispatch) => {
 
         // async code here
         const tabs = await tabsService.getTabsUrls();
@@ -29,15 +28,15 @@ export const startSaveTabs = () => {
 }
 
 export const startDeleteTabs = () => {
-    return async(dispatch) => {
+    return async(dispatch: AppDispatch) => {
         await localStorageService.setTabs([]);
 
         dispatch(deleteTabs());
     }
 }
 
-export const startDeleteTab = (tabId) => {
-    return async(dispatch) => {
+export const startDeleteTab = (tabId: number) => {
+    return async(dispatch: AppDispatch) => {
         // async code here
         await localStorageService.deleteItemById(tabId);
 
@@ -47,7 +46,7 @@ export const startDeleteTab = (tabId) => {
 }
 
 export const startOpenTabs = () => {
-    return async(dispatch, getState) => {
+    return async(_dispatch: AppDispatch, getState: () => RootState) => {
         const tabsUrls = getState().tabs.tabs.map(tab => tab.url);
         const currentOpenTabs = await tabsService.getTabsUrls();
         const currentUrlTabs = currentOpenTabs.map(tab => tab.url);
@@ -57,9 +56,9 @@ export const startOpenTabs = () => {
     }
 }
 
-export const startOpenTab = (tabId) => {
-    return async(dispatch, getState) => {
-        const tab = getState().tabs.tabs.find(tab => tab.id === tabId);
-        await tabsService.openTabs([tab.url]);
+export const startOpenTab = (tabId: number) => {
+    return async(_dispatch: AppDispatch, getState: () => RootState) => {
+        const tab = getState().tabs.tabs.filter(tab => tab.id === tabId)[0];
+        tabsService.openTabs([tab.url]);
     }
 }
