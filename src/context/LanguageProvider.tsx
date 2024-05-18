@@ -1,11 +1,11 @@
 import {LanguageContext} from "./LanguageContext";
 import dictionaries from "../languages/languages";
 import {useAppSelector} from "../store/hooks";
-import {selectPreferences} from "../store/rememberTabs";
+import {SelectPreferences} from "../store/rememberTabs";
 
 export const LanguageProvider = ({ children }) => {
 
-    const { language } = useAppSelector(selectPreferences);
+    const { language } = useAppSelector(SelectPreferences);
     const userDictionary = dictionaries[language] ?? dictionaries['EN-US'];
 
     return (
