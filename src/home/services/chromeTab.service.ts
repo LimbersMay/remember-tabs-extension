@@ -15,11 +15,11 @@ export class ChromeTabService {
         return new Promise((resolve) => {
             chrome.tabs.query({}, (tabs) => {
                 
-                const urls = tabs.map(tab => ({
-                    title: tab.title,
-                    url: tab.url,
-                    id: tab.id
-                }))
+                const urls: Tab[] = tabs.map(tab => ({
+                    title: tab.title || '',
+                    url: tab.url || '',
+                    id: tab.id || 0
+                }));
 
                 resolve(urls);
             });
