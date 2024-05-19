@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
-import {FooterButton} from "../../themes/default";
-import {useAppDispatch} from "../../store/hooks.js";
+import {useAppDispatch} from "../../store/hooks";
+import {FooterButton} from "./FooterButton";
 
 export const MainButtons = () => {
 
@@ -27,27 +27,27 @@ export const MainButtons = () => {
     }
 
     return (
-        <div className="flex justify-around items-center bg-[#E8EAF6] w-full h-[50px]">
+        <div className="flex justify-around items-center bg-mainButtonsContainer w-full h-[50px]">
             <FooterButton
-                appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
+                appendClass="bg-btnSave hover:bg-btnSaveHover"
                 onClick={ handleSaveTabs }
                 value={ saveButton }
             />
 
             <FooterButton
-                appendClass="bg-[#00695C] hover:bg-[#005a4f]"
+                appendClass="bg-btnOpen hover:bg-btnOpenHover"
                 onClick={ handleOpenAllTabs }
                 value={ openButton }
             />
 
             <FooterButton
-                appendClass="bg-[#C62828] hover:bg-[#b71c1c]"
+                appendClass="bg-btnDelete hover:bg-btnDeleteHover"
                 onClick={ handleDeleteAllTabs }
                 value={ deleteButton }
             />
 
             <FooterButton
-                appendClass="bg-[#455A64] hover:bg-[#37474F]"
+                appendClass="bg-btnOptions hover:bg-btnOptionsHover"
                 onClick={ () => {    history('/options');} }
                 value={ optionsButton }
             />
