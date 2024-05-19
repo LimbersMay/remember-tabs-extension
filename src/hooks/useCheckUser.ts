@@ -4,24 +4,26 @@ import {
     setChecking,
     startLoadingLanguage,
     startLoadingLayout,
-    startLoadingTabs
+    startLoadingTabs, startLoadingTheme
 } from "../store/rememberTabs";
 import {useAppDispatch, useAppSelector} from "../store/hooks.ts";
 
 export const useCheckUser = () => {
     const dispatch = useAppDispatch();
 
-    const { checking, layout } = useAppSelector(SelectPreferences);
+    const { checking, layout, theme } = useAppSelector(SelectPreferences);
 
     useEffect(() => {
         dispatch(startLoadingLayout());
         dispatch(startLoadingLanguage());
         dispatch(startLoadingTabs());
+        dispatch(startLoadingTheme());
         dispatch(setChecking('checked'));
     }, []);
 
     return {
         checking,
-        layout
+        layout,
+        theme
     };
 }

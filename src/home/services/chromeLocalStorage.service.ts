@@ -1,4 +1,5 @@
 import {Tab} from "../../interfaces/Tab.ts";
+import {Theme} from "../../interfaces/UserDictionary.ts";
 
 export class ChromeLocalStorageService {
 
@@ -70,5 +71,13 @@ export class ChromeLocalStorageService {
 
     setUserLayout(layout: string) {
         this.createItem("layout", layout);
+    }
+
+    setUserTheme(theme: string) {
+        this.createItem("theme", theme);
+    }
+
+    async getUserTheme(): Promise<Theme> {
+        return await this.getItemBy("theme") as Theme;
     }
 }

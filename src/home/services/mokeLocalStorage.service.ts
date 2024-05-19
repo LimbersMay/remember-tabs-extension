@@ -1,15 +1,18 @@
 import {Tab} from "../../interfaces/Tab.ts";
+import {Theme} from "../../interfaces/UserDictionary.ts";
 
 export class MokeLocalStorageService {
 
     public language: string;
     public layout: string;
     public tabs: Tab[];
+    public theme: Theme;
 
     constructor() {
         this.language = 'EN-US';
         this.layout = 'EXTENDED';
         this.tabs = [];
+        this.theme = 'LIGHT';
     }
     
     setTabs( tabs: Tab[] ) {
@@ -144,5 +147,17 @@ export class MokeLocalStorageService {
 
     setUserLayout(layout: string) {
         this.layout = layout;
+    }
+
+    deleteItemById(id: number) {
+        this.tabs = this.tabs.filter(tab => tab.id !== id);
+    }
+
+    setUserTheme(theme: Theme) {
+        this.theme = theme;
+    }
+
+    getUserTheme(): Theme {
+        return this.theme;
     }
 }

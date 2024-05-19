@@ -1,7 +1,8 @@
 import {ChromeLocalStorageService, MokeLocalStorageService} from "../../../home/services";
-import {setLanguage, setLayout} from "./preferencesSlice.ts";
+import {setLanguage, setLayout, setTheme} from "./preferencesSlice.ts";
 import {AppDispatch} from "../../store.ts";
 import {detectIfRunningInExtension} from "../../../utils/detecIfRunningInExtension.ts";
+import {Theme} from "../../../interfaces/UserDictionary.ts";
 
 let userService;
 
@@ -48,5 +49,25 @@ export const startSaveLayout = (layout: string) => {
 
         // sync code here
         dispatch(setLayout(layout));
+    }
+}
+
+export const startLoadingTheme = () => {
+    return async(dispatch: AppDispatch) => {
+        // async code here
+        const theme = await userService.getUserTheme();
+
+        // sync code here
+        dispatch(setTheme(theme));
+    }
+}
+
+export const startSaveTheme = (theme: Theme) => {
+    return async(dispatch: AppDispatch) => {
+        // async code here
+        await userService.setUserTheme(theme);
+
+        // sync code here
+        dispatch(setTheme(theme));
     }
 }

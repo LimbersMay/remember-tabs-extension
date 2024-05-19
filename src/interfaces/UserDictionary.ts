@@ -8,6 +8,8 @@ interface LayoutOptions {
     key: string;
 }
 
+export type Theme = 'LIGHT' | 'DARK';
+
 export interface UserDictionary {
     openButtonCard: string;
     openButton: string;
@@ -17,8 +19,9 @@ export interface UserDictionary {
     placeholderSelectLanguage: string;
     placeholderSelectLayout: string;
     cancelButton: string;
-    languageOptions: LanguageOptions[],
-    layoutOptions: LayoutOptions[],
+    languageOptions: LanguageOptions[];
+    layoutOptions: LayoutOptions[];
+    themeOptions: LayoutOptions[];
     simplesaveButton: string;
     simpleOpenButton: string;
     simpleDeleteButton: string;

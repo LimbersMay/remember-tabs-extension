@@ -38,6 +38,16 @@ const dictionaries: Record<string, UserDictionary> = {
                 key: "SIMPLE"
             }
         ],
+        themeOptions: [
+            {
+                value: "Claro",
+                key: "LIGHT"
+            },
+            {
+                value: "Oscuro",
+                key: "DARK"
+            }
+        ],
         simplesaveButton: "Guardar Tabs",
         simpleOpenButton: "Reabrir Tabs",
         simpleDeleteButton: "Borrar Tabs",
@@ -80,6 +90,16 @@ const dictionaries: Record<string, UserDictionary> = {
             {
                 value: "Simple",
                 key: "SIMPLE"
+            }
+        ],
+        themeOptions: [
+            {
+                value: "Light",
+                key: "LIGHT"
+            },
+            {
+                value: "Dark",
+                key: "DARK"
             }
         ],
         simplesaveButton: "Save current Tabs",
@@ -126,6 +146,16 @@ const dictionaries: Record<string, UserDictionary> = {
                 key: "SIMPLE"
             }
         ],
+        themeOptions: [
+            {
+                value: "Clair",
+                key: "LIGHT"
+            },
+            {
+                value: "Sombre",
+                key: "DARK"
+            }
+        ],
         simplesaveButton: "Sauvegarder les onglets",
         simpleOpenButton: "Réouvrir les onglets",
         simpleDeleteButton: "Supprimer les onglets",
@@ -169,6 +199,16 @@ const dictionaries: Record<string, UserDictionary> = {
             {
                 value: "Simples",
                 key: "SIMPLE"
+            }
+        ],
+        themeOptions: [
+            {
+                value: "Claro",
+                key: "LIGHT"
+            },
+            {
+                value: "Escuro",
+                key: "DARK"
             }
         ],
         simplesaveButton: "Salvar abas",

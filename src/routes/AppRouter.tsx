@@ -7,7 +7,7 @@ import {MainLayout, SimpleMainLayout} from "../layouts";
 
 export const AppRouter = () => {
 
-    const {checking: status, layout} = useCheckUser();
+    const {checking: status, layout, theme} = useCheckUser();
 
     const simpleRoutes = (
         <Route element={<SimpleMainLayout children={null}/>}>
@@ -30,6 +30,12 @@ export const AppRouter = () => {
     if (!layout) {
         return null;
     }
+
+    if (!theme) {
+        return null;
+    }
+
+    document.getElementById('root')!.className = theme;
 
     return (
         <>
