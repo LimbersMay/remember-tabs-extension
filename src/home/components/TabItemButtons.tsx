@@ -24,14 +24,14 @@ export const TabItemButtons = ({ tab }: { tab: Tab }) => {
         <div className="flex flex-col items-center justify-center w-[100px] h-[50px] gap-[5px]">
             
             <button
-                className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnOpen hover:bg-btnOpenHover text-tabText"
+                className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnOpen hover:bg-btnOpenHover text-buttonTex"
                 onClick={ handleOpenTab }
             >
                 { openButtonCard }
             </button>
 
             <button
-                className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnDelete hover:bg-btnDeleteHover text-tabText"
+                className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnDelete hover:bg-btnDeleteHover text-buttonTex"
                 onClick={ handleDeleteTab }
             >
                 { deleteButton }
