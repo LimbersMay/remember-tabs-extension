@@ -1,12 +1,12 @@
 import {
     ChromeLocalStorageService,
-    ChromeTabService,
+    ChromeTabService, MokeLocalStorageService, MokeLocalTabService,
 } from "../../../home/services";
 import {deleteTabById, deleteTabs, setTabs} from "./tabSlice";
 import {AppDispatch, RootState} from "../../store";
 
-const localStorageService = new ChromeLocalStorageService();
-const tabsService = new ChromeTabService();
+const localStorageService = new MokeLocalStorageService();
+const tabsService = new MokeLocalTabService();
 
 export const startLoadingTabs = () => {
     return async(dispatch: AppDispatch) => {

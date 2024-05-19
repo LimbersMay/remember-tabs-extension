@@ -2,8 +2,8 @@ import {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {LanguageContext} from "../../context";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
-import {ActionButton} from "../../themes/default";
 import {useAppDispatch} from "../../store/hooks.ts";
+import {ActionButton} from "./ActionButton.tsx";
 
 
 export const ButtonsContainer = () => {
@@ -35,7 +35,7 @@ export const ButtonsContainer = () => {
 
     const history = useNavigate();
 
-    const [ message, setMessage ] = useState(null);
+    const [ message, setMessage ] = useState('');
     const [ messageColor, setMessageColor ] = useState('');
 
     const handleSetSuccessMessage = () => {
