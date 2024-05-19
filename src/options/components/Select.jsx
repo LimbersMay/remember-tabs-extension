@@ -1,24 +1,25 @@
-
 import { v4 as uuid } from 'uuid';
-import * as S from '../styled-components/index.js';
 
-export const Select = ({selected, options, name}) => {
+export const Select = ({ selected, options, name }) => {
 
     return (
-        <S.SelectContainer>
-            <S.Select name={name}>
+        <div className="flex w-full flex-row justify-evenly">
+            <select
+                name={name}
+                className="border-none outline-none rounded-[5px] h-[35px] w-[80%] p-[5px] bg-[#d7d9e6]"
+                defaultValue={selected}
+            >
                 {
-                    options.map( element => (
-                         <option
-                             key={uuid()}
-                             value={ element.key }
-                             selected={selected === element.key}
-                         >
-                             { element.value }
-                         </option>
+                    options.map(element => (
+                        <option
+                            key={uuid()}
+                            value={element.key}
+                        >
+                            {element.value}
+                        </option>
                     ))
                 }
-            </S.Select>
-        </S.SelectContainer>
-    )
-}
+            </select>
+        </div>
+    );
+};

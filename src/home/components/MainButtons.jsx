@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import * as S from '../styled-components/index';
 import { useNavigate } from 'react-router-dom';
 import {LanguageContext} from "../../context";
 import {useDispatch} from "react-redux";
 import {startDeleteTabs, startOpenTabs, startSaveTabs} from "../../store/rememberTabs";
+import {FooterButton} from "../../themes/default/home/FooterButton.jsx";
 
 export const MainButtons = () => {
 
@@ -27,38 +27,30 @@ export const MainButtons = () => {
     }
 
     return (
-        <S.MainButtons>
-            <S.MainButton 
-                background={'#2E7D32'}
-                hoverColor={'#2a692d'}
+        <div className="flex justify-around items-center bg-[#E8EAF6] w-full h-[50px]">
+            <FooterButton
+                appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
                 onClick={ handleSaveTabs }
-            >
-                { saveButton }
-            </S.MainButton>
+                value={ saveButton }
+            />
 
-            <S.MainButton 
-                background={'#00695C'}
-                hoverColor={'#005a4f'}
+            <FooterButton
+                appendClass="bg-[#00695C] hover:bg-[#005a4f]"
                 onClick={ handleOpenAllTabs }
-                >
-                { openButton }
-            </S.MainButton>
+                value={ openButton }
+            />
 
-            <S.MainButton 
-                background={'#C62828'}
-                hoverColor={'#b71c1c'}
+            <FooterButton
+                appendClass="bg-[#C62828] hover:bg-[#b71c1c]"
                 onClick={ handleDeleteAllTabs }
-                >
-                { deleteButton }
-            </S.MainButton>
+                value={ deleteButton }
+            />
 
-            <S.MainButton
-                background={'#455A64'}
-                hoverColor={'#37474F'}
+            <FooterButton
+                appendClass="bg-[#455A64] hover:bg-[#37474F]"
                 onClick={ () => {    history('/options');} }
-            >
-                { optionsButton }
-            </S.MainButton>
-        </S.MainButtons>
+                value={ optionsButton }
+            />
+        </div>
     )
 }

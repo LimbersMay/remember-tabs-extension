@@ -1,18 +1,14 @@
-
-import React from 'react';
-import { Header } from '../home/components';
-import * as S from '../styled-components/MainLayout.style.jsx';
+import {Header} from "../home/components/index.js";
 import {Outlet} from "react-router-dom";
 
 export const MainLayout = ({ children }) => {
     return (
-        <S.MainLayout>
-            
+        <div className="flex flex-col items-center justify-start bg-gray-100 w-[350px] h-[350px]">
             <Header />
 
-            {children}
+            { children }
 
             <Outlet />
-        </S.MainLayout>
-    )
+        </div>
+    );
 }
