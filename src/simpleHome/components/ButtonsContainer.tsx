@@ -40,46 +40,46 @@ export const ButtonsContainer = () => {
 
     const handleSetSuccessMessage = () => {
         setMessage(simpleSucessMessage);
-        setMessageColor('#1B5E20')
+        setMessageColor('text-btnSave')
     }
 
     const handleSetOpenTabsMessage = () => {
         setMessage(simpleReopenTabsMessage);
-        setMessageColor('#004D40');
+        setMessageColor('text-btnOpen');
     }
 
     const handleSetDeleteTabsMessage = () => {
         setMessage(simpleDeleteTabsMessage);
-        setMessageColor('#B71C1C');
+        setMessageColor('text-btnDelete');
     }
 
     return (
         <div className="flex mt-[10px] flex-col items-center">
             <ActionButton
-                appendClass="bg-[#2E7D32] hover:bg-[#2a692d]"
+                appendClass="bg-btnSave hover:bg-btnSaveHover"
                 onClick={() => {handleSaveTabs(); handleSetSuccessMessage()}}
                 value={simplesaveButton}
             />
 
             <ActionButton
-                appendClass="bg-[#00695C] hover:bg-[#005a4f]"
+                appendClass="bg-btnOpen hover:bg-btnOpenHover"
                 onClick={() => {handleOpenTabs(); handleSetOpenTabsMessage()}}
                 value={simpleOpenButton}
             />
 
             <ActionButton
-                appendClass="bg-[#C62828] hover:bg-[#B71C1C]"
+                appendClass="bg-btnDelete hover:bg-btnDeleteHover"
                 onClick={() => {handleDeleteTabs(); handleSetDeleteTabsMessage()}}
                 value={simpleDeleteButton}
             />
 
             <ActionButton
-                appendClass="bg-[#455A64] hover:bg-[#37474F]"
+                appendClass="bg-btnOptions hover:bg-btnOptionsHover"
                 onClick={ () => { history('/options');} }
                 value={optionsButton}
             />
 
-            <div className="font-bold text-center" style={{color: messageColor}}>
+            <div className={`font-bold text-center ${messageColor}`}>
                 <p>
                     {message}
                 </p>

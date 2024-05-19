@@ -4,7 +4,7 @@ import {ReactNode} from "react";
 
 export const SimpleMainLayout = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="flex flex-col items-center justify-start bg-mainButtonsContainer w-[150px] h-[350px]">
+        <div className="flex flex-col items-center justify-start bg-background w-[150px] h-[350px]">
 
             <Header />
 

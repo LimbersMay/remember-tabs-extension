@@ -11,41 +11,41 @@ export default {
     },
     plugins: [
         createThemes({
-            light: {
-                primary: "#006064",
-                mainButtonsContainer: "#E8EAF6",
-                tabItem: "#d7d9e6",
-                tabItemHover: "#c7c9d6",
-                background: "#f7fafc",
+                light: {
+                    primary: "#006064",
+                    mainButtonsContainer: "#E8EAF6",
+                    tabItem: "#d7d9e6",
+                    tabItemHover: "#c7c9d6",
+                    background: "#f7fafc",
 
-                tabText: "#000000",
+                    tabText: "#FEFAF6",
 
-                btnSave: "#2E7D32",
-                btnSaveHover: "#2a692d",
-                btnOpen: "#00695C",
-                btnOpenHover: "#005a4f",
-                btnDelete: "#c62828",
-                btnDeleteHover: "#b71c1c",
-                btnOptions: "#455A64",
-                btnOptionsHover: "#37474F",
-            },
-                "dark": {
-                    "primary": "#004d40",
-                    "mainButtonsContainer": "#2e3b4e",
-                    "tabItem": "#424a5b",
-                    "tabItemHover": "#535e70",
-                    "background": "#1b2430",
+                    btnSave: "#2E7D32",
+                    btnSaveHover: "#2a692d",
+                    btnOpen: "#00695C",
+                    btnOpenHover: "#005a4f",
+                    btnDelete: "#c62828",
+                    btnDeleteHover: "#b71c1c",
+                    btnOptions: "#455A64",
+                    btnOptionsHover: "#37474F",
+                },
+                dark: {
+                    primary: "#1F1F1F",
+                    tabItem: "#1D1D1D",
+                    tabItemHover: "#2e2c2c",
+                    background: "#121212",
+                    mainButtonsContainer: "#22221f",
 
-                    "tabText": "#ffffff",
+                    tabText: "#FEFAF6",
 
-                    "btnSave": "#388e3c",
-                    "btnSaveHover": "#2e7031",
-                    "btnOpen": "#00897b",
-                    "btnOpenHover": "#00695c",
-                    "btnDelete": "#d32f2f",
-                    "btnDeleteHover": "#c62828",
-                    "btnOptions": "#546e7a",
-                    "btnOptionsHover": "#455a64"
+                    btnSave: "#5AA1C2",
+                    btnSaveHover: "#3a7f9f",
+                    btnOpen: "#35A69B",
+                    btnOpenHover: "#2e8f85",
+                    btnDelete: "#B84C4B",
+                    btnDeleteHover: "#a63b3a",
+                    btnOptions: "#37474F",
+                    btnOptionsHover: "#2c3a41",
                 }
             }
         )

@@ -1,8 +1,15 @@
-import {ChromeLocalStorageService} from "../../../home/services";
+import {ChromeLocalStorageService, MokeLocalStorageService} from "../../../home/services";
 import {setLanguage, setLayout} from "./preferencesSlice.ts";
 import {AppDispatch} from "../../store.ts";
+import {detectIfRunningInExtension} from "../../../utils/detecIfRunningInExtension.ts";
 
-const userService = new ChromeLocalStorageService();
+let userService;
+
+if (detectIfRunningInExtension()) {
+    userService = new ChromeLocalStorageService();
+} else {
+    userService = new MokeLocalStorageService();
+}
 
 export const startLoadingLanguage = () => {
     return async(dispatch: AppDispatch) => {

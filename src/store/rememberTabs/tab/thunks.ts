@@ -4,9 +4,18 @@ import {
 } from "../../../home/services";
 import {deleteTabById, deleteTabs, setTabs} from "./tabSlice";
 import {AppDispatch, RootState} from "../../store";
+import {detectIfRunningInExtension} from "../../../utils/detecIfRunningInExtension.ts";
 
-const localStorageService = new MokeLocalStorageService();
-const tabsService = new MokeLocalTabService();
+let localStorageService;
+let tabsService;
+
+if (detectIfRunningInExtension()) {
+    localStorageService = new ChromeLocalStorageService();
+    tabsService = new ChromeTabService();
+} else {
+    localStorageService = new MokeLocalStorageService();
+    tabsService = new MokeLocalTabService();
+}
 
 export const startLoadingTabs = () => {
     return async(dispatch: AppDispatch) => {
