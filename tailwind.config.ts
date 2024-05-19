@@ -11,14 +11,15 @@ export default {
     },
     plugins: [
         createThemes({
-                light: {
+                LIGHT: {
                     primary: "#006064",
                     mainButtonsContainer: "#E8EAF6",
                     tabItem: "#d7d9e6",
                     tabItemHover: "#c7c9d6",
                     background: "#f7fafc",
 
-                    tabText: "#FEFAF6",
+                    tabText: "#121111",
+                    buttonTex: "#FEFAF6",
 
                     btnSave: "#2E7D32",
                     btnSaveHover: "#2a692d",
@@ -29,7 +30,7 @@ export default {
                     btnOptions: "#455A64",
                     btnOptionsHover: "#37474F",
                 },
-                dark: {
+                DARK: {
                     primary: "#1F1F1F",
                     tabItem: "#1D1D1D",
                     tabItemHover: "#2e2c2c",
@@ -37,6 +38,7 @@ export default {
                     mainButtonsContainer: "#22221f",
 
                     tabText: "#FEFAF6",
+                    buttonTex: "#FEFAF6",
 
                     btnSave: "#5AA1C2",
                     btnSaveHover: "#3a7f9f",
