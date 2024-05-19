@@ -35,16 +35,6 @@ git clone https://github.com/LimbersMay/changeTerminalDirectory.git
 npm install
 ```
 
-**By default**, the extension will use the ChromeLocalStorage class to save the tabs. However, the syntax in this class is only available
-in a Chrome extension, so you will need to switch to the ChromeMokeLocalStorage and MokeLocalTab classes to run the 
-extension in development mode.
-
-**You need to change it in the following files**:
-- src/store/rememberTabs/preferences/thunks.js
-- src/store/rememberTabs/tab/thunks.js
-
-**The above steps are not required if you build the extension and load it in Chrome**.
-
 ## Available Scripts
 - `npm run dev` - runs the app in development mode
 - `npm run build` - builds the app for production to the `dist` folder
