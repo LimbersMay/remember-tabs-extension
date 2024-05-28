@@ -2,11 +2,11 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from "../../store.ts";
 import {Tab} from "../../../interfaces/Tab.ts";
 
-interface initialState {
+export interface TabSliceInitialState {
     tabs: Tab[];
 }
 
-const initialState: initialState = {
+const initialState: TabSliceInitialState = {
     tabs: []
 };
 
