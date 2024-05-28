@@ -31,16 +31,20 @@ export const OptionsApp = () => {
     }
 
     return (
-        <form
-            onSubmit={onSubmit}
-            onReset={onReset}
-            style={{
-                width: "100%",
-                height: "100%"
-            }}
-        >
-            <PreferencesContainer/>
-            <OptionButtons/>
-        </form>
+        <div className="w-full h-full flex flex-col justify-between">
+            <form
+                onSubmit={onSubmit}
+                onReset={onReset}
+                style={{width: "100%"}}
+            >
+                <PreferencesContainer/>
+                <OptionButtons/>
+            </form>
+
+            <span className="text-center text-xs text-versionText p-2 pointer-events-none">
+                v2.0.0
+            </span>
+        </div>
+
     )
 }
