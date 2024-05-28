@@ -8,7 +8,7 @@ interface ActionButtonProps {
 export const ActionButton = ({ onClick, appendClass, value }: ActionButtonProps) => {
     return (
         <button
-            className={`w-[120px] h-[50px] border-none m-[3px] text-tabText rounded-[5px] ${appendClass}`}
+            className={`w-[120px] h-[50px] border-none m-[3px] text-buttonTex rounded-[5px] ${appendClass}`}
             onClick={onClick}
         >
             {
