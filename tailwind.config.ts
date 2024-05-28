@@ -16,10 +16,11 @@ export default {
                     mainButtonsContainer: "#E8EAF6",
                     tabItem: "#d7d9e6",
                     tabItemHover: "#c7c9d6",
-                    background: "#f7fafc",
+                    background: "#E8EAF6",
 
                     tabText: "#121111",
                     buttonTex: "#FEFAF6",
+                    versionText: "#515151",
 
                     btnSave: "#2E7D32",
                     btnSaveHover: "#2a692d",
@@ -39,6 +40,7 @@ export default {
 
                     tabText: "#FEFAF6",
                     buttonTex: "#FEFAF6",
+                    versionText: "#FEFAF6",
 
                     btnSave: "#5AA1C2",
                     btnSaveHover: "#3a7f9f",
