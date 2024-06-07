@@ -13,7 +13,7 @@ const initialState: initialState = {
     language: 'EN-US',
     layout: 'EXTENDED',
     checking: 'checking',
-    theme: 'DARK'
+    theme: 'LIGHT'
 }
 
 export const preferencesSlice = createSlice({
