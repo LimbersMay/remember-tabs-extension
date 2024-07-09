@@ -26,6 +26,7 @@ export const TabItemButtons = ({ tab }: { tab: Tab }) => {
             <button
                 className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnOpen hover:bg-btnOpenHover text-buttonTex"
                 onClick={ handleOpenTab }
+                aria-label="open-tab-button"
             >
                 { openButtonCard }
             </button>
@@ -33,6 +34,7 @@ export const TabItemButtons = ({ tab }: { tab: Tab }) => {
             <button
                 className="w-[80%] text-[14px] h-[30px] rounded-[4px] bg-btnDelete hover:bg-btnDeleteHover text-buttonTex"
                 onClick={ handleDeleteTab }
+                aria-label="delete-tab-button"
             >
                 { deleteButton }
             </button>

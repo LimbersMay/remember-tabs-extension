@@ -36,13 +36,13 @@ export class ChromeLocalStorageService {
         await chrome.storage.sync.set(query);
     }
 
-    getItemBy(query: string): Promise<string> {
+    getItemBy(query: string): Promise<string | null> {
 
         return new Promise(( resolve ) => {
             chrome.storage.sync.get([query], function( result ) {
 
                 if ( !result[query]) {
-                    return resolve("");
+                    return resolve(null);
                 }
 
                 resolve(result[query]);
@@ -77,7 +77,7 @@ export class ChromeLocalStorageService {
         this.createItem("theme", theme);
     }
 
-    async getUserTheme(): Promise<Theme> {
-        return await this.getItemBy("theme") as Theme;
+    async getUserTheme() {
+        return await this.getItemBy("theme") as Theme | null;
     }
 }

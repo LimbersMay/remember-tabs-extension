@@ -20,7 +20,17 @@ export const preferencesSlice = createSlice({
     name: 'preferences',
     initialState: initialState,
     reducers: {
-        setLanguage: (state, action: PayloadAction<string>) => {
+        setLanguage: (state, action: PayloadAction<string | null>) => {
+
+            /*
+                The reason why we are checking if the action.payload is empty is because it
+                 could be the first time that the user is using the application and the language is not set yet.
+
+                If that's the case and the user tries to open the application, the windows will be empty and the application will crash
+                and won't be logs in the console.
+
+                So, if the value is empty we will return the default value of the state.
+             */
 
             if (!action.payload) {
                 return state;
@@ -28,7 +38,7 @@ export const preferencesSlice = createSlice({
 
             state.language = action.payload;
         },
-        setLayout: (state, action: PayloadAction<string>) => {
+        setLayout: (state, action: PayloadAction<string | null>) => {
 
             if (!action.payload) {
                 return state;
@@ -36,7 +46,12 @@ export const preferencesSlice = createSlice({
 
             state.layout = action.payload;
         },
-        setTheme: (state, action: PayloadAction<Theme>) => {
+        setTheme: (state, action: PayloadAction<Theme | null>) => {
+
+            if (!action.payload) {
+                return state;
+            }
+
             state.theme = action.payload;
         },
         setChecking: (state, action: PayloadAction<string>) => {
