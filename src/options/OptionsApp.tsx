@@ -44,7 +44,7 @@ export const OptionsApp = () => {
             </form>
 
             <span className="text-center text-xs text-versionText p-2 pointer-events-none">
-                v2.0.2
+                v2.1.0
             </span>
         </div>
 
