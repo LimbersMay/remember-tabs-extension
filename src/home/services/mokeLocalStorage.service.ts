@@ -7,12 +7,14 @@ export class MokeLocalStorageService {
     public layout: string;
     public tabs: Tab[];
     public theme: Theme;
+    public autoSave: string;
 
     constructor() {
         this.language = 'EN-US';
         this.layout = 'EXTENDED';
         this.tabs = [];
         this.theme = 'LIGHT';
+        this.autoSave = "false";
     }
     
     setTabs( tabs: Tab[] ) {
@@ -159,5 +161,13 @@ export class MokeLocalStorageService {
 
     getUserTheme(): Theme {
         return this.theme;
+    }
+
+    setUserAutoSave(autoSave: string) {
+        this.autoSave = autoSave;
+    }
+
+    getUserAutoSave(): string {
+        return this.autoSave;
     }
 }
