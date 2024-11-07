@@ -80,4 +80,18 @@ export class ChromeLocalStorageService {
     async getUserTheme() {
         return await this.getItemBy("theme") as Theme | null;
     }
+
+    async setUserAutoSave(autoSave: string) {
+        await this.createItem("autoSave", autoSave);
+    }
+
+    async getUserAutoSave(): Promise<string> {
+        const autoSave = await this.getItemBy("autoSave");
+
+        if (autoSave === null) {
+            return "false";
+        }
+
+        return autoSave;
+    }
 }
