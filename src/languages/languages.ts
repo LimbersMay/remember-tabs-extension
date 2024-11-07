@@ -48,6 +48,16 @@ const dictionaries: Record<string, UserDictionary> = {
                 key: "DARK"
             }
         ],
+        autoSaveOptions: [
+            {
+                value: "Activado",
+                key: "true"
+            },
+            {
+                value: "Desactivado",
+                key: "false"
+            }
+        ],
         simplesaveButton: "Guardar Tabs",
         simpleOpenButton: "Reabrir Tabs",
         simpleDeleteButton: "Borrar Tabs",
@@ -100,6 +110,16 @@ const dictionaries: Record<string, UserDictionary> = {
             {
                 value: "Dark",
                 key: "DARK"
+            }
+        ],
+        autoSaveOptions: [
+            {
+                value: "Enabled",
+                key: "true"
+            },
+            {
+                value: "Disabled",
+                key: "false"
             }
         ],
         simplesaveButton: "Save current Tabs",
@@ -156,6 +176,16 @@ const dictionaries: Record<string, UserDictionary> = {
                 key: "DARK"
             }
         ],
+        autoSaveOptions: [
+            {
+                value: "Activé",
+                key: "true"
+            },
+            {
+                value: "Désactivé",
+                key: "false"
+            }
+        ],
         simplesaveButton: "Sauvegarder les onglets",
         simpleOpenButton: "Réouvrir les onglets",
         simpleDeleteButton: "Supprimer les onglets",
@@ -209,6 +239,16 @@ const dictionaries: Record<string, UserDictionary> = {
             {
                 value: "Escuro",
                 key: "DARK"
+            }
+        ],
+        autoSaveOptions: [
+            {
+                value: "Ativado",
+                key: "true"
+            },
+            {
+                value: "Desativado",
+                key: "false"
             }
         ],
         simplesaveButton: "Salvar abas",
