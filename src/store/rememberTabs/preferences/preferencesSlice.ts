@@ -7,13 +7,15 @@ interface initialState {
     layout: string;
     checking: string;
     theme: Theme;
+    autoSave: string;
 }
 
 const initialState: initialState = {
     language: 'EN-US',
     layout: 'EXTENDED',
     checking: 'checking',
-    theme: 'LIGHT'
+    theme: 'LIGHT',
+    autoSave: "false"
 }
 
 export const preferencesSlice = createSlice({
@@ -29,7 +31,8 @@ export const preferencesSlice = createSlice({
                 If that's the case and the user tries to open the application, the windows will be empty and the application will crash
                 and won't be logs in the console.
 
-                So, if the value is empty we will return the default value of the state.
+                So, if the value is empty we will return the default value of the state that is 'EN-US',
+                this for the language, layout, and theme.
              */
 
             if (!action.payload) {
@@ -56,6 +59,13 @@ export const preferencesSlice = createSlice({
         },
         setChecking: (state, action: PayloadAction<string>) => {
             state.checking = action.payload;
+        },
+        setAutoSave: (state, action: PayloadAction<string>) => {
+            if (!action.payload) {
+                return state;
+            }
+
+            state.autoSave = action.payload;
         }
     }
 });
@@ -65,6 +75,7 @@ export const {
     setLanguage,
     setLayout,
     setChecking,
-    setTheme
+    setTheme,
+    setAutoSave
 } = preferencesSlice.actions
 export const SelectPreferences = (state: RootState) => state.preferences;
