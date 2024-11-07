@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {
     SelectPreferences,
-    setChecking,
+    setChecking, startLoadingAutoSave,
     startLoadingLanguage,
     startLoadingLayout,
     startLoadingTabs, startLoadingTheme
@@ -18,6 +18,7 @@ export const useCheckUser = () => {
         dispatch(startLoadingLanguage());
         dispatch(startLoadingTabs());
         dispatch(startLoadingTheme());
+        dispatch(startLoadingAutoSave());
         dispatch(setChecking('checked'));
     }, []);
 

@@ -22,6 +22,7 @@ export interface UserDictionary {
     languageOptions: LanguageOptions[];
     layoutOptions: LayoutOptions[];
     themeOptions: LayoutOptions[];
+    autoSaveOptions: LayoutOptions[];
     simplesaveButton: string;
     simpleOpenButton: string;
     simpleDeleteButton: string;
