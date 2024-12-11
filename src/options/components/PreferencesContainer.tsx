@@ -3,14 +3,13 @@ import { Select } from "./Select";
 import { LanguageContext } from "../../context";
 import {useAppSelector} from "../../store/hooks.ts";
 import {SelectPreferences} from "../../store/rememberTabs";
-import kofiLogo from "../../../public/assets/kofi.png";
 
 export const PreferencesContainer = () => {
 
     const { language, layout, theme } = useAppSelector(SelectPreferences);
 
     const { userDictionary } = useContext(LanguageContext);
-    const {languageOptions, layoutOptions, themeOptions} = userDictionary;
+    const {languageOptions, layoutOptions, themeOptions, rebooksPromotionMessage } = userDictionary;
 
     return (
         <div className="flex flex-col items-center gap-[10px] mt-[25px] mb-[20px]">
@@ -31,18 +30,19 @@ export const PreferencesContainer = () => {
                 name={"theme"}
             />
 
-            <a
-                href="https://ko-fi.com/limbersdev"
-                target="_blank"
-                className="flex items-center w-[80%] h-[35px] border-none rounded-[5px] p-[5px] text-white bg-[#13C3FF] justify-center hover:shadow cursor-pointer"
+            {/* Button to promote a new extension called "Rebooks" */}
+            <button
+                className="
+                    bg-gradient-to-r from-[#6D83F2] to-[#6C57F5]
+                    hover:from-[#6C57F5] hover:to-[#6D83F2]
+                    text-white font-bold py-2 px-6 rounded-lg shadow-md
+                    hover:shadow-lg transition-transform transform hover:scale-105 focus:outline-none
+                  "
+                onClick={() => window.open('https://chromewebstore.google.com/detail/rebooks-save-track-your-r/kmggkmkjkkbikpdeaminlpkcngobclaj?authuser=2&hl=en', '_blank')}
             >
-                <img
-                    src={kofiLogo}
-                    alt="Kofi Logo"
-                    className="w-[25px] h-[25px] inline-block"
-                />
-                Support me on Kofi
-            </a>
+                📚 { rebooksPromotionMessage }
+            </button>
+
         </div>
     )
 }

@@ -28,4 +28,5 @@ export interface UserDictionary {
     simpleSucessMessage: string;
     simpleReopenTabsMessage: string;
     simpleDeleteTabsMessage: string;
+    rebooksPromotionMessage: string;
 }
