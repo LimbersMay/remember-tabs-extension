@@ -54,6 +54,7 @@ const dictionaries: Record<string, UserDictionary> = {
         simpleSucessMessage: "Tabs guardados",
         simpleReopenTabsMessage: "Tabs abiertos",
         simpleDeleteTabsMessage: "Tabs borrados",
+        rebooksPromotionMessage: "Nuevo lanzamiento: ¡Rebooks!"
     },
     'EN-US': {
         openButtonCard: 'Open',
@@ -108,6 +109,7 @@ const dictionaries: Record<string, UserDictionary> = {
         simpleSucessMessage: "Tabs saved",
         simpleReopenTabsMessage: "Tabs opened",
         simpleDeleteTabsMessage: "Tabs deleted",
+        rebooksPromotionMessage: "Try our new extension Rebooks!"
     },
     'FR-FR': {
         openButtonCard: 'Ouvrir',
@@ -162,6 +164,7 @@ const dictionaries: Record<string, UserDictionary> = {
         simpleSucessMessage: "Les onglets ont été enregistrés",
         simpleReopenTabsMessage: "Les onglets ont été réouverts",
         simpleDeleteTabsMessage: "Les onglets ont été supprimés",
+        rebooksPromotionMessage: "Nouveau lancement: ¡Rebooks!"
     },
     // Portuguese
     'PT-BR': {
@@ -217,6 +220,7 @@ const dictionaries: Record<string, UserDictionary> = {
         simpleSucessMessage: "Abas salvas",
         simpleReopenTabsMessage: "Abas reabertas",
         simpleDeleteTabsMessage: "Abas apagadas",
+        rebooksPromotionMessage: "Novo lançamento: ¡Rebooks!"
     }
 }
 
